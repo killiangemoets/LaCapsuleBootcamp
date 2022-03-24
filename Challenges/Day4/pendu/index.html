@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Pendu</title>
+  </head>
+  <body>
+    <div class="game">
+      <div class="player-section">
+        <h1 class="player">Player <span>1</span></h1>
+      </div>
+      <div class="score-box">
+        <h2 class="score">Score: <span>8</span></h2>
+      </div>
+      <div class="secret-word-box">
+        <ul class="secret-word">
+          <li class="letter">A</li>
+          <li class="letter">R</li>
+          <li class="letter">B</li>
+          <li class="letter">R</li>
+          <li class="letter">E</li>
+        </ul>
+      </div>
+      <div class="word-form-box">
+        <form class="word-form">
+          <input
+            id="input-word"
+            type="text"
+            placeholder="Enter a word to guess"
+            name="message"
+          />
+          <button class="btn" id="btn--word">Add</button>
+        </form>
+        <p class="error-message">Can only contain letters</p>
+      </div>
+      <div class="alphabet-box">
+        <ul class="alphabet"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

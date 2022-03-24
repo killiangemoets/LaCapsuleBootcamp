@@ -1,0 +1,203 @@
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 40%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* height: 100vh;
+  width: 100vw; */
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #444;
+  /* background-color: #f4f6fb; */
+  /* background-image: linear-gradient(to right bottom, red, #eb984e); */
+  background-image: linear-gradient(to right bottom, #66a80f, #c0eb75);
+}
+
+.game {
+  /* background-color: aliceblue; */
+  width: 80rem;
+  /* height: 50rem; */
+  margin: 4.8rem auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9.6rem;
+}
+
+.player-section {
+  /* background-color: #ddd; */
+  background-color: #f4fce3;
+  padding: 2.4rem 3.6rem;
+  border-radius: 12px;
+}
+
+.player {
+  text-transform: uppercase;
+  font-size: 6.4rem;
+  font-weight: 700;
+  color: #66a80f;
+}
+
+.score-box {
+  text-transform: uppercase;
+  height: 5.6rem;
+}
+
+.score {
+  font-size: 5.6rem;
+  color: #f4fce3;
+}
+
+.secret-word-box {
+  /* background-color: #f4fce3; */
+  height: 12rem;
+  padding: 2.4rem;
+  border-radius: 12px;
+}
+
+.secret-word {
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+  font-size: 6.4rem;
+  font-weight: 600;
+  color: #f4fce3;
+}
+
+.letter {
+  border-bottom: 0.8rem solid #f4fce3;
+  width: 4.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.word-form {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  border-radius: 8px;
+
+  transition: all 0.5s;
+}
+
+.word-form input {
+  width: 32rem;
+  padding: 1.2rem 2rem;
+  font-size: 1.8rem;
+  color: #66a80f;
+
+  border: none;
+  border-radius: 8px;
+}
+.word-form input::placeholder {
+  color: #999;
+}
+
+.word-form input:focus {
+  outline: none;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  padding: 1.2rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+
+  transition: all 0.3s;
+  background-color: #66a80f;
+  /* border: 4px solid #66a80f; */
+  color: #f4fce3;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #f4fce3;
+  /* border: 4px solid #66a80f; */
+  color: #66a80f;
+}
+
+.error-message {
+  /* background-color: red; */
+  /* text-align: center; */
+  /* margin-bottom: 2.4rem; */
+  margin-top: 1.2rem;
+  margin-left: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #f4fce3;
+}
+
+.alphabet {
+  list-style: none;
+  display: grid;
+  /* grid-template-columns: repeat(10, 1fr); */
+  grid-template-columns: repeat(18, 1fr);
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+
+  font-size: 6.4rem;
+  font-weight: 600;
+  color: #f4fce3;
+}
+
+.alphabet--letter {
+  cursor: pointer;
+  grid-column: span 2;
+  background-color: #5c940d;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 12px;
+}
+
+.alphabet--letter:nth-last-child(8) {
+  grid-column: 2 / span 2;
+}
+
+.desactivate {
+  background-color: #f4fce3;
+  color: #5c940d;
+  transition: all 0.3s;
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.hidden {
+  /* 1) Hide it visually */
+  opacity: 0;
+  /* 2) Make it unaccessible to mouse and keybord */
+  pointer-events: none;
+  /* 3) Hide it from screen readers */
+  visibility: hidden;
+}
+
+.remove {
+  display: none;
+}

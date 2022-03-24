@@ -1,0 +1,103 @@
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #444;
+  /* background-color: #f4f6fb; */
+  background-image: linear-gradient(to right bottom, red, #eb984e);
+}
+
+.uno-app {
+  background-color: #fff3bf;
+  border-radius: 24px;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.2);
+  width: 60vw;
+  /* height: 60rem; */
+  margin: 4.8rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  align-items: center;
+  justify-items: center;
+  padding: 6.4rem;
+}
+
+.title {
+  background-color: red;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.title h1 {
+  font-size: 4.8rem;
+  color: rgb(235, 215, 37);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  font-weight: 700;
+  padding: 1.2rem 2.4rem;
+  text-transform: uppercase;
+}
+
+.game {
+  background-color: #ddd;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  background-color: red;
+  width: 6.4rem;
+  height: 9.2rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card p {
+  text-align: center;
+  font-size: 6.4rem;
+  color: #fff;
+}
+
+.stack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  height: 4.8rem;
+}
+
+.message h3 {
+  font-size: 4.8rem;
+  font-weight: 600;
+}
+
+.myCards {
+  width: 100%;
+  height: 9.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+  transition: all 0.3s;
+}
+
+.allow-to-play {
+  box-shadow: inset 0 0 0 4px black, 0 1.2rem 3.2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-0.8rem);
+}

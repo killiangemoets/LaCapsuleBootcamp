@@ -1,0 +1,26 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fcfcfe;
+}
+
+#header {
+  text-align: center;
+  font-family: montserrat, sans-serif;
+  height: 5vh;
+}
+
+#container {
+  margin-top: 50px;
+  text-align: center;
+}
+
+textarea {
+  box-shadow: 1px 1px 2px #888;
+  margin-bottom: 5px;
+}
+
+#result {
+  margin-top: 10px;
+  font-family: 'montserrat light', sans-serif;
+}

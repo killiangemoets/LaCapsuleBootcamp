@@ -1,0 +1,65 @@
+PROJET - TextFinder
+
+Object de la journée
+
+L'objectif est de développer un script, comptant combien de fois est présent un mot recherché dans un texte. Si aucune recherche n'est spécifiée, le script devra compter le nombre total de mots.
+
+1 - L'environnement de travail
+  Créez un répertoire textfinder dans le répertoire ./lacapsule/project et prositionnez vous dedans.
+    cd ./lacapsule/project/textfinder
+  Vous trouverez un fichier index.html et un fichier style.css joints à ces instructions.
+
+  Pour commencer, lisez le code HTML et comprenez-le. Une fois cette étape faite, passez à la suite.
+
+  Vous travaillerez dans un fichier script.js et ferez en sorte que celui-ci communique avec votre HTML.
+
+  Pour rappel, vous pouvez utiliser browser-sync qui vous permettra de lancer votre application et qu'elle se rafraichisse automatiquement lorsqu'une modification est faite :
+    browser-sync start --server --files "**/*.html, **/*.css **/*.js"
+
+2 - Compteur
+  Vous allez commencer par comptabiliser le nombre de mots présents dans la zone de texte.
+  Il y a plusieurs moyens de trouver des mots dans une chaîne de caractère. Il existe une méthode split(), il est possible d'utiliser une simple boucle avec une condition qui va compter le nombre d'espaces, etc ...
+  Afin que le script soit facilement et rapidement lisible, vous utilisez la méthode nommée précédemment.
+  Vous avez maintenant l'habitude que l'on vous le dise, le console.log() est très utile dans les moments où on manipule un élément qui ne s'affiche pas directement.
+  A l'aide d'un console.log(), vérifiez si vous récupérez bien le nombre de mots présents dans le texte. La valeur trouvée devrait se situer autour 220 (± 20) mots.
+
+  Grâce à votre script, faites en sorte d'afficher le nombre de mots présents dans le texte, en dessous du champs input, comme ceci :
+    Il y a <nombre> mots dans le texte ci-dessus.
+
+  Parfait ... Enfin presque. Le seul problème que nous avons pour le moment, si vous avez suivi les instructions à la lettre, c'est que le résultat que l'on souhaite avoir, au moment de la recherche, se fait dès l'actualisation de la page.
+  Il faut donc déclencher ça à l'aide d'un événement. Pour rappel, il vous faudra utiliser "addEventListener".
+  Placez sur l'élément HTML adéquat un événement au clic, déclenchant la partie du code servant à calculer le nombre de mots.
+
+  Une fois cette première partie fonctionnelle, passez à la recherche de mots.
+
+
+3 - Recherche
+  Le compteur total a été effectué. Il faut maintenant s'attaquer à la recherche d'un mot renseigné par l'utilisateur de votre page.
+  Parcourez la liste de mots créée à l'étape précédente et faites en sorte de compter combien de fois il y a de correspondance entre le mot recherché et les éléments de la liste.
+  Vous aurez besoin d'un compteur.
+  Une fois cette étape effectuée et le résultat vérifié, affichez combien de fois le mot est présent, en dessous du champs input :
+    Le mot "<mot>" est présent <nombre> fois dans le texte ci-dessus.
+
+  Voilà, ce challenge est terminé. Si vous le souhaitez, vous pouvez passer aux bonus. Vous pouvez les faire dans l'ordre que vous souhaitez.
+
+
+4 - Bonus
+  Lors de la réalisation du compteur, vous vous êtes peut être demandé pourquoi le nombre de mot pouvait être variable (± 20 mots).
+  Il se peut que certains d'entre vous aient pensé à enlevé les espaces non intéressants. Il existe une méthode permettant de "réduire" les chaînes de caractères en enlevant la majorité des espaces inutiles.
+  A l'aide de cette déjà existante, enlevez tous les espaces indésirables.
+    Avec le texte original, vous devriez maintenant avoir 220 mots, pour 1448 caractères.
+
+
+  Faites en sorte que la casse ne soit pas prise en compte (une recherche en majuscule devra aussi trouver les mots en minuscule)
+  Pour se faire, lors de votre traitement, les mots du champs input et de la boucle doivent tous deux être écrits de la même manière (minuscules et/ou majuscules).
+
+
+  Lorsque le bouton Recherche est actionné, faites en sorte que le champs input y étant lié soit reset.
+
+
+  Modifiez la phrase lorsque le mot recherché n'est pas trouvé dans le texte, en :
+    Le mot "<mot>" n'a pas été trouvé dans le texte ci-dessus.
+
+
+  Faites en sorte que lorsque vous modifiez vous-même le texte présent dans la textarea, sur la page web (non pas dans le code), votre script prenne en compte les changements et fasse tous les bons traitements.
+    Il se peut que ce bonus ait été effectué, avant même d'avoir pris connaissance de celui-ci.

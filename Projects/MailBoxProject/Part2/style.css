@@ -1,0 +1,83 @@
+/* html { */
+/* Now 1rem = 10px */
+/* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+/* font-size: 62.5%;
+} */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #f5f6fa;
+  color: #333;
+}
+
+.app {
+  margin: 100px auto;
+  width: 64vw;
+}
+
+#count span {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.messages {
+  /* margin: 100px auto; */
+  display: flex;
+  /* gap: 2px; */
+  /* width: 64vh; */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header,
+.message {
+  background-color: #fff;
+  /* border: 1px solid #dadada; */
+  border-top: 1px solid #dadada;
+  border-right: 1px solid #dadada;
+  border-left: 1px solid #dadada;
+  padding: 16px 24px;
+}
+
+.message {
+  padding: 16px 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.message:last-child {
+  border-bottom: 1px solid #dadada;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.img-avatar {
+  /* background-color: blue; */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.img-trash {
+  /* background-color: cyan; */
+  width: 15px;
+  height: 15px;
+}

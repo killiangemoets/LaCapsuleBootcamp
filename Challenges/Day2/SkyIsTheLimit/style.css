@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+
+.bg-img {
+  width: 100%;
+}
+
+h1 {
+  position: absolute;
+  color: #fff;
+  /* top: 20px; */
+  left: 20px;
+}
+
+ul {
+  list-style: none;
+  background-color: #fff;
+  width: 60vw;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+li {
+  display: flex;
+  gap: 20px;
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.galaxie-img {
+  height: 120px;
+  width: 152px;
+}

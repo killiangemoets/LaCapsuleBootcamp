@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.rubikscube {
+  margin: 100px auto;
+  padding: 25px;
+  height: 400px;
+  width: 400px;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 25px;
+  border-radius: 8px;
+}
+
+.color {
+  /* background-color: red; */
+  height: 100px;
+  width: 100px;
+  border-radius: 8px;
+}

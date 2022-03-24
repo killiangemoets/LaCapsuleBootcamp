@@ -1,0 +1,9 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cookie {
+  width: 80px;
+  margin: 40px;
+}
