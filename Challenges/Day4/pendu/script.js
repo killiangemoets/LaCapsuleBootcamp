@@ -51,6 +51,7 @@ init();
 
 const player2 = {
   _renderSecreteWorld() {
+    secretWord.innerHTML = "";
     state.secretWord.split("").forEach((letter) => {
       //   console.log(letter);
       const markup = `
@@ -80,11 +81,13 @@ const player2 = {
 };
 
 const player1 = {
-  _updateSecretWorld(letterPositions) {
-    state.secretWord.split("").forEach((letter, index) => {
+  _updateSecretWorld(letter) {
+    secretWord.innerHTML = "";
+
+    state.secretWord.split("").forEach((secretLetter) => {
       //   console.log(letter);
       const markup = `
-        <li class="letter"></li>
+        <li class="letter">${secretLetter === letter ? letter : ""}</li>
         `;
       secretWord.insertAdjacentHTML("beforeend", markup);
     });
@@ -105,7 +108,7 @@ const player1 = {
       score.textContent = state.score;
       return;
     }
-    this._updateSecretWorld(letterPositions);
+    this._updateSecretWorld(letter);
   },
 };
 
