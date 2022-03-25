@@ -1,9 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 32px;
   height: 100vh;
   background-color: #ddd;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #222;
 }
 
 #game {
@@ -16,6 +30,7 @@ body {
 }
 
 #player {
+  width: 8%;
   position: absolute;
   transform: translate3d();
   z-index: 10;

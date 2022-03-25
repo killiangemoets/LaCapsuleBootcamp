@@ -15,9 +15,13 @@ var timer = null;
 btn.click(function () {
   if (state === 0) {
     timer = setInterval(run, speed);
+    btn.text("Stop");
+
     state = 1;
   } else {
     clearInterval(timer);
+    btn.text("Run");
+
     state = 0;
   }
 });
@@ -25,5 +29,4 @@ btn.click(function () {
 function run() {
   cat.attr("src", `./images/cat-${numImg}.jpg`);
   numImg = numImg === 13 ? 1 : numImg + 1;
-  btn.text("Stop");
 }

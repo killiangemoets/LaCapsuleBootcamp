@@ -95,5 +95,4 @@ const init = function () {
   addANewMessage();
   searchForAMessage();
 };
-
 init();
