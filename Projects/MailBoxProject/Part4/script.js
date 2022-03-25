@@ -3,6 +3,7 @@
 const count = $("#count").find("span");
 const addBtn = $("#btn--add");
 const searchBtn = $("#btn--search");
+const returnBtn = $("#btn--return");
 const addInput = $("#input--add");
 const searchInput = $("#input--search");
 const messagesSection = $("#messages");
@@ -56,10 +57,11 @@ const addANewMessage = function () {
     renderMessage(message);
     renderNumberMessages();
     // deleteMessage(); DON'T NEED IT ANYMORE THANKS TO THE .ON METHOD !
+    $("#messages").children().show();
   });
 };
 
-const searchAMessage = function () {
+const searchForAMessage = function () {
   searchBtn.click(function (e) {
     e.preventDefault();
 
@@ -69,28 +71,29 @@ const searchAMessage = function () {
 
     const messagesArray = $("#messages").children();
     const names = messagesArray.find(".name");
-    const messagesToRender = [];
 
     names.each(function (index) {
-      if (
-        $(this).text().toLowerCase().indexOf(searchName.toLowerCase()) === -1
-      ) {
-        // messagesToRender.push(messagesArray[index]);
-        messagesArray[index].hide();
-      }
+      if ($(this).text().toLowerCase().indexOf(searchName.toLowerCase()) === -1)
+        $(messagesArray[index]).hide();
+      else $(messagesArray[index]).show();
     });
 
-    // messagesToRender.each(function () {
-    //   const message = {
-    //     name: "",
-    //     content: "",
-    //   };
-    //   renderMessage(message);
-    // });
+    returnBtn.show();
+  });
+
+  returnBtn.click(function (e) {
+    e.preventDefault();
+    $("#messages").children().show();
+    returnBtn.hide();
   });
 };
 
-renderNumberMessages();
-deleteMessage();
-addANewMessage();
-searchAMessage();
+const init = function () {
+  returnBtn.hide();
+  renderNumberMessages();
+  deleteMessage();
+  addANewMessage();
+  searchForAMessage();
+};
+
+init();
