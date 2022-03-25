@@ -1,0 +1,108 @@
+body{
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/********
+ *HEADER*
+*********/
+#header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+}
+
+#header h1{
+  font-size: 35px;
+  text-decoration: underline overline;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+#header h4{
+  font-size: 20px;
+  border: 1px solid white;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/********
+ *BODY*
+*********/
+.divider{
+  width: 2px;
+  height: 50px;
+  background-color: white;
+}
+
+#main_container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.crypto_container{
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.10);
+  margin-top: 30px;
+  padding: 5px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  min-width: 51vw;
+}
+
+.crypto_container img{
+  margin-right: 10vw;
+  margin-left: 5vw;
+}
+
+.crypto_container div{
+  margin-right: 10vw;
+}
+
+p{
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 2vw;
+  color:white;
+}
+
+h6{
+  font-size: 20px;
+  min-width: 10vw;
+  color:white;
+}
+
+.picto-crypto{
+  width: 100px;
+  height: 100px;
+}
+
+
+/* for responsive deisgn */
+@media only screen and (max-width: 1200px) {
+  .crypto_container{
+    justify-content: space-around;
+  }
+  .crypto_container img{
+    margin-right: 6vw;
+  }
+  .divider{
+    display: none;
+  }
+  h6{
+    margin-right: 2vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .crypto_container{
+    width: 100vw;
+  }
+  #header{
+    text-align: center;
+  }
+}

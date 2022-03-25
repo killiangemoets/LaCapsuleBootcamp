@@ -8,12 +8,10 @@ const input = document.getElementById("input--add");
 const messagesSection = document.getElementById("messages");
 
 const renderNumberMessages = function () {
-  const numberMessages = arrayMessages.length;
-  count.textContent = numberMessages;
+  count.textContent = arrayMessages.length;
 };
 
 const deleteMessage = function () {
-  console.log(trashImages);
   Array.from(trashImages).forEach((trash) => {
     trash.addEventListener("click", function () {
       this.parentNode.remove();

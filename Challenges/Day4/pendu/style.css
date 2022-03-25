@@ -8,6 +8,7 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  transition: all 1.2s;
 }
 
 body {
@@ -91,8 +92,6 @@ body {
   justify-content: center;
   gap: 3.2rem;
   border-radius: 8px;
-
-  transition: all 0.5s;
 }
 
 .word-form input {
