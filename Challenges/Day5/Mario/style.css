@@ -1,6 +1,29 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ddd;
+}
+
+#game {
+  position: relative;
+  width: 60vw;
+  height: 80vh;
+  background-color: rgb(73, 160, 62);
+  border: 20px solid rgb(141, 58, 32);
+  position: relative;
+}
+
+#player {
+  position: absolute;
+  transform: translate3d();
+  z-index: 10;
+}
+
+#star {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
 }
