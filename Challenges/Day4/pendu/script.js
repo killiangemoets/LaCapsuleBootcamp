@@ -22,6 +22,7 @@ const state = {
   gameState: 0,
   secretWord: "",
   score: scoreMax,
+  foundLetters: [],
 };
 
 const createAlphabetSection = function () {
@@ -37,7 +38,7 @@ const createAlphabetSection = function () {
 
 const init = function () {
   createAlphabetSection();
-  player.textContent = 2;
+  player.textContent = 1;
   state.score = scoreMax;
   score.textContent = state.score;
   scoreSection.classList.add("hidden");
@@ -45,82 +46,81 @@ const init = function () {
   formSection.classList.remove("remove");
   alphabetSection.classList.add("hidden");
   errorMessage.classList.add("hidden");
-  secretWord.innerHTML = "";
+  // secretWord.innerHTML = "";
 };
 init();
 
-const player2 = {
-  _renderSecreteWorld() {
-    secretWord.innerHTML = "";
-    state.secretWord.split("").forEach((letter) => {
-      //   console.log(letter);
-      const markup = `
-      <li class="letter"></li>
+const renderSecreteWorld = function () {
+  secretWord.innerHTML = "";
+  state.foundLetters.forEach((letter) => {
+    const markup = `
+      <li class="letter">${letter}</li>
       `;
-      secretWord.insertAdjacentHTML("beforeend", markup);
-    });
-  },
-
-  play() {
-    if (input.value === "") return;
-    var letters = /^[A-Za-z]+$/;
-    if (!input.value.match(letters)) {
-      errorMessage.classList.remove("hidden");
-      return;
-    }
-    errorMessage.classList.add("hidden");
-    state.secretWord = input.value.toUpperCase();
-    input.value = "";
-    formSection.classList.add("remove");
-    scoreSection.classList.remove("hidden");
-    secretWordSection.classList.remove("hidden");
-    alphabetSection.classList.remove("hidden");
-    this._renderSecreteWorld();
-    player.textContent = 1;
-  },
+    secretWord.insertAdjacentHTML("beforeend", markup);
+  });
 };
 
-const player1 = {
-  _updateSecretWorld(letter) {
-    secretWord.innerHTML = "";
+const player1play = function () {
+  if (input.value === "") return;
+  var letters = /^[A-Za-z]+$/;
+  if (!input.value.match(letters)) {
+    errorMessage.classList.remove("hidden");
+    return;
+  }
+  // errorMessage.classList.add("hidden");
+  state.secretWord = input.value.toUpperCase().split("");
+  state.foundLetters = Array(state.secretWord.length).fill("");
+  input.value = "";
+  formSection.classList.add("remove");
+  scoreSection.classList.remove("hidden");
+  secretWordSection.classList.remove("hidden");
+  alphabetSection.classList.remove("hidden");
+  player.textContent = 2;
+  renderSecreteWorld();
+};
 
-    state.secretWord.split("").forEach((secretLetter) => {
-      //   console.log(letter);
-      const markup = `
-        <li class="letter">${secretLetter === letter ? letter : ""}</li>
-        `;
-      secretWord.insertAdjacentHTML("beforeend", markup);
-    });
-  },
-
-  play(letter) {
-    console.log(state.secretWord);
-    const letterPositions = [];
-    state.secretWord.split("").forEach((secretLetter, index) => {
-      if (secretLetter === letter) {
-        letterPositions.push(index);
-      }
-      //    this.updateSecretWorld();
-    });
-    console.log(letterPositions);
-    if (letterPositions.length === 0) {
-      state.score--;
-      score.textContent = state.score;
-      return;
+const player2play = function (letter) {
+  if (state.secretWord.indexOf(letter) === -1) {
+    state.score--;
+    score.textContent = state.score;
+    if (state.score === 0) {
+      console.log("Player 1 won!");
+      state.gameState = 1;
+      // TO BE CONTINUED
     }
-    this._updateSecretWorld(letter);
-  },
+    return;
+  }
+
+  state.secretWord.forEach((secretLetter, i) => {
+    if (secretLetter === letter) {
+      state.foundLetters[i] = letter;
+    }
+  });
+
+  renderSecreteWorld();
+
+  if (state.foundLetters.indexOf("") === -1) {
+    console.log("Player 2 won!");
+    state.gameState = 1;
+    // TO BE CONTINUED
+  }
 };
 
 btn.addEventListener("click", function (e) {
   e.preventDefault();
-  player2.play();
+  // if (state.gameState === 1) return;
+  player1play();
 });
 
 alphabetSection.addEventListener("click", function (e) {
   const letterEl = e.target.closest(".alphabet--letter");
-  if (!letterEl || letterEl.classList.contains("desactivate")) return;
+  if (
+    !letterEl ||
+    letterEl.classList.contains("desactivate") ||
+    state.gameState === 1
+  )
+    return;
   letterEl.classList.add("desactivate");
   const letter = letterEl.dataset.letter;
-  player1.play(letter);
+  player2play(letter);
 });
