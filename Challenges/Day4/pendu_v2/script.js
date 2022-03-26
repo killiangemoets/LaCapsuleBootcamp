@@ -3,10 +3,10 @@ const alphabet = String.fromCharCode(...Array(123).keys())
   .toUpperCase()
   .split("");
 
-const scoreMax = 5;
+const scoreMax = 6;
 
 const playerSection = document.querySelector(".player-box");
-const scoreSection = document.querySelector(".score-box");
+const scoreSection = document.querySelector(".hangman-box");
 const secretWordSection = document.querySelector(".secret-word-box");
 const formSection = document.querySelector(".word-form-box");
 const alphabetSection = document.querySelector(".alphabet-box");
@@ -14,7 +14,8 @@ const playAgainSection = document.querySelector(".play-again-box");
 const errorMessage = document.querySelector(".error-message");
 const alphabetList = document.querySelector(".alphabet");
 const player = document.querySelector(".player").querySelector("span");
-const score = document.querySelector(".score").querySelector("span");
+const hangman = document.querySelectorAll(".hangman");
+
 const winner = document.querySelector(".winner").querySelector("span");
 const secretWord = document.querySelector(".secret-word");
 const addBtn = document.querySelector("#btn--word");
@@ -24,7 +25,7 @@ const input = document.querySelector("#input-word");
 const state = {
   gameState: 0,
   secretWord: "",
-  score: scoreMax,
+  score: 0,
   foundLetters: [],
 };
 
@@ -42,9 +43,9 @@ const createAlphabetSection = function () {
 const init = function () {
   createAlphabetSection();
   player.textContent = 1;
-  state.score = scoreMax;
-  score.textContent = state.score;
+  state.score = 0;
   scoreSection.classList.add("hidden");
+  hangman.forEach((el) => el.classList.add("hidden"));
   secretWordSection.classList.add("hidden");
   formSection.classList.remove("remove");
   alphabetSection.classList.add("hidden");
@@ -88,9 +89,9 @@ const player1play = function () {
 
 const player2play = function (letter) {
   if (state.secretWord.indexOf(letter) === -1) {
-    state.score--;
-    score.textContent = state.score;
-    if (state.score === 0) {
+    hangman[state.score].classList.remove("hidden");
+    state.score++;
+    if (state.score === scoreMax) {
       state.gameState = 1;
       renderPlayAgainMenu(1);
     }

@@ -20,8 +20,19 @@
       <div class="player-section">
         <h1 class="player">Player <span></span></h1>
       </div>
-      <div class="score-box">
-        <h2 class="score">Score: <span></span></h2>
+      <div class="hangman-box">
+        <!-- <div class="hangman-draw"> -->
+        <div class="structure" id="structure1"></div>
+        <div class="structure" id="structure2"></div>
+        <div class="structure" id="structure3"></div>
+        <div class="structure" id="structure4"></div>
+        <div class="hangman" id="body1"></div>
+        <div class="hangman" id="body2"></div>
+        <div class="hangman" id="body3"></div>
+        <div class="hangman" id="body4"></div>
+        <div class="hangman" id="body5"></div>
+        <div class="hangman" id="body6"></div>
+        <!-- </div> -->
       </div>
       <div class="secret-word-box">
         <ul class="secret-word"></ul>
@@ -34,7 +45,7 @@
             placeholder="Enter a word to guess"
             name="message"
           />
-          <button class="btn" id="btn--word">Add</button>
+          <button class="btn" id="btn--word">OK</button>
         </form>
         <p class="error-message">Can only contain letters</p>
       </div>
@@ -46,6 +57,7 @@
         <button class="btn" id="btn--play-again">Play again</button>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
