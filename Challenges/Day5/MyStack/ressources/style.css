@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+}
+
+/********
+ *HEADER*
+*********/
+#header, #myStack {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#header h1 {
+  font-size: 40px;
+  color: white;
+}
+
+#header div {
+  width: 50vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/********
+ *BODY*
+*********/
+ul {
+  padding: 0;
+}
+
+button {
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 17px;
+  padding: 16px 31px;
+  text-shadow: 0px 1px 0px #2f6627;
+  box-shadow: 1px 1px 1px #484848;
+}
+
+button:hover {
+  background-color: #5cbf2a;
+}
+
+button:active {
+  position: relative;
+  top: 1px;
+}
+
+button:focus {
+  outline: none;
+}
+
+li {
+  font-size: 20px;
+}
+
+/* Style par défaut des stacks */
+.stack_container, .stack_container2{
+  display: flex;
+  padding: 1vh;
+  width: 50vw;
+  max-height: 50px;
+  margin-top: 50px;
+  border-radius: 28px;
+  box-shadow: 4px 3px 3px #484848;
+  cursor: grab;
+}
+
+.stack_container{
+  background: linear-gradient(90deg, rgb(230, 230, 230, 0.8), #F5F5F5);
+}
+/* Style voulus des stacks apres un clique sur le bouton "Color Stack" */
+.stack_container2{
+  background-color: rgb(68, 199, 103);
+}
+
+.stack_container:active, .stack_container2:active{
+  cursor: grabbing;
+  border: 2px solid #A9A9A9;
+  opacity: 0.5;
+}
+
+.stack_container:active{
+  background-color: #F5F5F5;
+}
+.stack_container2:active{
+  background-color: rgb(68, 199, 103);
+}
+
+/* Stacks */
+.image_stack {
+  width: 20%;
+}
+
+.content {
+  width: 30%;
+}
+
+.container_star {
+  width: 48%;
+}
+
+.bigger {
+  cursor: pointer;
+  width: 2%;
+}
+
+.image_stack, .content, .container_star, .bigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* image */
+.stack_img {
+  height: 50px;
+  margin-right: 20px;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+}
+
+/* for responsive deisgn */
+@media only screen and (max-width: 1200px) {
+  .stack_container, .stack_container2 {
+    width: 70vw;
+  }
+
+  #header div {
+    width: 71vw;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .stack_container, .stack_container2 {
+    width: 100vw;
+    border-radius: 0px;
+  }
+
+  #header div {
+    width: 100vw;
+    flex-direction: column;
+  }
+}

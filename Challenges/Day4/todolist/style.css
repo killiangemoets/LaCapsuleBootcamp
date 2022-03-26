@@ -1,0 +1,46 @@
+#header{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+#main_container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.item{
+  box-shadow: 4px 4px 5px #777;
+  background-color:#fff;
+  border-radius: 5px;
+  padding:10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 300px;
+  margin-bottom: 50px;
+}
+
+.item:hover{
+  background-color: lightgrey;
+}
+
+body{
+  background-color: #45aaf2;
+  font-family: 'Roboto Slab', serif;
+}
+
+.item h3 img{
+  width: 30px;
+  margin-right: 5px;
+}
+
+.item h3{
+  display: flex;
+  align-items: center;
+}
+
+h1{
+  font-size: 40px;
+}
