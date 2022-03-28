@@ -1,0 +1,98 @@
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #eee;
+}
+
+header {
+  margin: 3.6rem auto;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 3.6rem;
+}
+
+nav {
+  margin-bottom: 3.6rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar {
+  width: 76%;
+  list-style: none;
+  font-size: 1.6rem;
+  border-bottom: 3px solid #bbb;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.link {
+}
+
+.link-active {
+  /* background-color: red; */
+  padding: 0.8rem;
+  /* padding-bottom: 2.2rem; */
+  /* transform: translateY(0.33rem); */
+  z-index: 1;
+  border: 3px solid #bbb;
+  border-bottom: 0px solid #eee;
+}
+
+.link-active a {
+  color: #bbb;
+}
+
+.link a {
+  text-decoration: none;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.profiles {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  background-color: #fff;
+  border: 3px solid #bbb;
+  border-radius: 3px;
+  padding: 2.4rem 1.2rem;
+}
+
+.profile img {
+  width: 100%;
+}
+.profile h5 {
+  font-size: 2rem;
+}
+.profile p {
+  font-size: 1.2rem;
+}

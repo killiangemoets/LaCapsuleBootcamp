@@ -1,0 +1,25 @@
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+
+/* Très grand: 1200px
+Grand: 992px
+Moyen: 768px
+Petit: 576px
+Très petit: <576px */
+
+@media (max-width: 992px) {
+  .profiles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .profiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .profiles {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
