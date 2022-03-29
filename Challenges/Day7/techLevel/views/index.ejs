@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TechLevel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>TechLevel</h1>
+    </header>
+    <main>
+      <ul class="developpers">
+
+        <%
+        for(var i=0; i<developpers.length; i++){
+          %>
+        <li>
+          <div class="flex-horizontal">
+          <img src="<%= (developpers[i].sex === 'man')? 'images/male.svg': 'images/female.svg'%>" class="sex-logo" alt="sex" />
+
+          <div class="flex-vertical">
+
+          <h3 class="name"><%= developpers[i].firstname%> <%= developpers[i].lastname%></h3>
+
+          <div class="skills">
+          <%
+          developpers[i].skills.forEach(skill => {
+            %>
+            <div class="skill"><%= skill %></div>
+            <%
+          })
+            %>
+          </div>
+          </div>
+        </div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style= <%= "width:" + developpers[i].level + "%;" %> aria-valuenow="<%= developpers[i].level %>" aria-valuemin="0" aria-valuemax="100">
+              <span><%= developpers[i].level %>%</span>
+            </div>
+
+          </div>
+
+        </li>
+
+        <%
+      }
+      %>
+      </ul>
+    </main>
+
+    <script>
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"
+  </script>
+  </body>
+</html>

@@ -33,13 +33,33 @@ var dataBike = [
     price: 1399,
   },
 ];
+var dataCardBike = [
+  {
+    name: "BIK045",
+    urlImage: "images/bike-1.jpg",
+    price: 679,
+    quantity: 2,
+  },
+  {
+    name: "ZOOK7",
+    urlImage: "images/bike-2.jpg",
+    price: 799,
+    quantity: 1,
+  },
+  {
+    name: "LIK089",
+    urlImage: "images/bike-3.jpg",
+    price: 839,
+    quantity: 3,
+  },
+];
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { dataBike: dataBike });
 });
 router.get("/shop", function (req, res, next) {
-  res.render("shop", { dataBike: dataBike });
+  res.render("shop", { dataBike: dataCardBike });
 });
 
 module.exports = router;

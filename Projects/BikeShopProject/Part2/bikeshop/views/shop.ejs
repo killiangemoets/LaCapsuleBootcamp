@@ -61,6 +61,9 @@
       </thead>
       <tbody>
         <%
+        let totalPrice = 0;
+        %>
+        <%
         for(var i=0; i<dataBike.length; i++){
           %>
 
@@ -73,7 +76,7 @@
                 alt="bike picture"
               />
             </td>
-            <td></td>
+            <td><%= dataBike[i].name %></td>
             <td>
               <form class="form-inline">
                 <div class="form-group">
@@ -84,6 +87,7 @@
                     min="1"
                     id="form-quantity"
                     placeholder="Quantity"
+                    value = "<%= dataBike[i].quantity %>"
                   />
                 </div>
                 <button type="submit" class="btn btn-outline-primary">
@@ -92,17 +96,33 @@
               </form>
             </td>
             <td><%= dataBike[i].price %>€</td>
-            <td>1358€</td>
+            <td><%= dataBike[i].price * dataBike[i].quantity %>€</td>
             <td>
               <button class="btn btn-outline-primary">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
             </td>
           </tr>
-        
-        <%
+          <%
+          totalPrice += dataBike[i].price * dataBike[i].quantity;
+          %>
+
+          <%
         }
         %>
+
+
+
+          <tr class="white-row">
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total Basket:</td>
+            <td><%= totalPrice%>€</td>
+            <td></td>
+          </tr>
+        
 
         <!-- <tr>
           <th scope="row">0</th>
@@ -209,7 +229,7 @@
             </button>
           </td>
         </tr> -->
-        <tr class="white-row">
+        <!-- <tr class="white-row">
           <th></th>
           <td></td>
           <td></td>
@@ -217,7 +237,7 @@
           <td>Total Basket:</td>
           <td>3056€</td>
           <td></td>
-        </tr>
+        </tr> -->
         <tr class="white-row table-borderless">
           <th></th>
           <td></td>
