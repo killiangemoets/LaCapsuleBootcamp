@@ -10,7 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap"
       rel="stylesheet"
@@ -24,7 +24,7 @@
 
   <body>
     <nav class="navbar navbar-light bg-dark">
-      <a class="navbar" href="index.html">
+      <a class="navbar" id="header-logo" href="index.ejs">
         <img
           src="images/bike-logo.svg"
           width="50"
@@ -40,7 +40,35 @@
     <!-- BIKES SECTION: initializing of the grid here -->
     <div class="container">
       <div class="row">
+        <%
+        for(var i=0; i<dataBike.length; i++){
+          %>
+
         <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="h-100 card pt-2">
+            <img
+              src="<%= dataBike[i].urlImage %>"
+              class="card-img-top"
+              alt="bike picture"
+            />
+            <div class="card-body">
+              <h5 class="card-title text-center"><%= dataBike[i].name %></h5>
+              <div
+                class="price-and-buy d-flex justify-content-center align-items-center"
+              >
+                <div>
+                  <p class="card-text"><%= dataBike[i].price %>€</p>
+                </div>
+                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%
+      }
+      %>
+        <!-- <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="h-100 card pt-2">
             <img
               src="images/bike-1.jpg"
@@ -48,14 +76,14 @@
               alt="bike picture"
             />
             <div class="card-body">
-              <h5 class="card-title text-center">BIKO45</h5>
+              <h5 class="card-title">BIKO45</h5>
               <div
                 class="price-and-buy d-flex justify-content-center align-items-center"
               >
                 <div>
                   <p class="card-text">679€</p>
                 </div>
-                <a href="shop.html" class="btn btn-outline-primary">Buy</a>
+                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
               </div>
             </div>
           </div>
@@ -68,14 +96,14 @@
               alt="bike picture"
             />
             <div class="card-body">
-              <h5 class="card-title text-center">ZOOK7</h5>
+              <h5 class="card-title">ZOOK7</h5>
               <div
                 class="price-and-buy d-flex justify-content-center align-items-center"
               >
                 <div>
                   <p class="card-text">799€</p>
                 </div>
-                <a href="shop.html" class="btn btn-outline-primary">Buy</a>
+                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
               </div>
             </div>
           </div>
@@ -88,14 +116,14 @@
               alt="bike picture"
             />
             <div class="card-body">
-              <h5 class="card-title text-center">LIK089</h5>
+              <h5 class="card-title">LIK089</h5>
               <div
                 class="price-and-buy d-flex justify-content-center align-items-center"
               >
                 <div>
                   <p class="card-text">839€</p>
                 </div>
-                <a href="shop.html" class="btn btn-outline-primary">Buy</a>
+                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
               </div>
             </div>
           </div>
@@ -108,14 +136,14 @@
               alt="bike picture"
             />
             <div class="card-body">
-              <h5 class="card-title text-center">GEW08</h5>
+              <h5 class="card-title">GEW08</h5>
               <div
                 class="price-and-buy d-flex justify-content-center align-items-center"
               >
                 <div>
                   <p class="card-text">1249€</p>
                 </div>
-                <a href="shop.html" class="btn btn-outline-primary">Buy</a>
+                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
               </div>
             </div>
           </div>
@@ -128,14 +156,14 @@
               alt="bike picture"
             />
             <div class="card-body">
-              <h5 class="card-title text-center">KIWIT</h5>
+              <h5 class="card-title">KIWIT</h5>
               <div
                 class="price-and-buy d-flex justify-content-center align-items-center"
               >
                 <div>
                   <p class="card-text">899€</p>
                 </div>
-                <a href="shop.html" class="btn btn-outline-primary">Buy</a>
+                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
               </div>
             </div>
           </div>
@@ -148,18 +176,18 @@
               alt="bike picture"
             />
             <div class="card-body">
-              <h5 class="card-title text-center">NASAY</h5>
+              <h5 class="card-title">NASAY</h5>
               <div
                 class="price-and-buy d-flex justify-content-center align-items-center"
               >
                 <div>
                   <p class="card-text">1399€</p>
                 </div>
-                <a href="shop.html" class="btn btn-outline-primary">Buy</a>
+                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- Scripts ------------------------------------------- -->
