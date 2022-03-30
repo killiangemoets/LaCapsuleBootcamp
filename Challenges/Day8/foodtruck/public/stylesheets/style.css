@@ -1,0 +1,44 @@
+body {
+  padding: 0px 80px;
+}
+h1 {
+  font-family: 'Baloo Bhai', cursive;
+  text-align: center;
+  font-size: 50px;
+  color: #FCB865;
+}
+
+#frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#frame > div {
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+#truck {
+  width: 400px;
+}
+
+.row {
+  display: flex;
+}
+.food {
+  width: 110px;
+}
+.link-food {
+  text-decoration: none;
+  color: #FCB865;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  font-family: 'Baloo Bhai', cursive;
+}

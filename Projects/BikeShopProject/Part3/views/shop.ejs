@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap"
+      rel="stylesheet"
+    />
+    <title>BikeShop - Shop</title>
+
+    <script
+      src="https://kit.fontawesome.com/4901497cb9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- header -->
+    <nav class="navbar navbar-light bg-dark">
+      <a class="navbar" id="header-logo" href="index.ejs">
+        <img
+          src="images/bike-logo.svg"
+          width="50"
+          height="50"
+          class="logo"
+          alt=""
+        />
+        The Bike Shop Experience
+      </a>
+    </nav>
+
+    <nav aria-label="breadcrumb" class="menu">
+      <ol class="breadcrumb menu">
+        <li class="breadcrumb-item"><a href="index.ejs">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Basket</li>
+      </ol>
+    </nav>
+
+    <h1 class="basket-title">Basket</h1>
+
+    <table class="table">
+      <thead>
+        <tr class="white-row">
+          <th scope="col">#</th>
+          <th scope="col">Picture</th>
+          <th scope="col">Model</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%
+        let totalPrice = 0;
+        %>
+        <%
+        for(var i=0; i<dataBike.length; i++){
+          %>
+
+          <tr>
+            <th scope="row"><%= i %></th>
+            <td>
+              <img
+                src="<%= dataBike[i].urlImage %>"
+                class="card-img-top basket-img"
+                alt="bike picture"
+              />
+            </td>
+            <td><%= dataBike[i].name %></td>
+            <td>
+              <form class="form-inline">
+                <div class="form-group">
+                  <input
+                    class="form-control mx-sm-3"
+                    aria-describedby="passwordHelpInline"
+                    type="number"
+                    min="1"
+                    id="form-quantity"
+                    placeholder="Quantity"
+                    value = "<%= dataBike[i].quantity %>"
+                  />
+                </div>
+                <button type="submit" class="btn btn-outline-primary">
+                  <i class="fa-solid fa-arrows-rotate"></i>
+                </button>
+              </form>
+            </td>
+            <td><%= dataBike[i].price %>€</td>
+            <td><%= dataBike[i].price * dataBike[i].quantity %>€</td>
+            <td>
+              <button class="btn btn-outline-primary">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+          <%
+          totalPrice += dataBike[i].price * dataBike[i].quantity;
+          %>
+
+          <%
+        }
+        %>
+
+
+
+          <tr class="white-row">
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total Basket:</td>
+            <td><%= totalPrice%>€</td>
+            <td></td>
+          </tr>
+        
+
+        <!-- <tr>
+          <th scope="row">0</th>
+          <td>
+            <img
+              src="images/bike-1.jpg"
+              class="card-img-top basket-img"
+              alt="bike picture"
+            />
+          </td>
+          <td>BIK045</td>
+          <td>
+            <form class="form-inline">
+              <div class="form-group">
+                <input
+                  class="form-control mx-sm-3"
+                  aria-describedby="passwordHelpInline"
+                  type="number"
+                  min="1"
+                  id="form-quantity"
+                  placeholder="Quantity"
+                />
+              </div>
+              <button type="submit" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </form>
+          </td>
+          <td>679€</td>
+          <td>1358€</td>
+          <td>
+            <button class="btn btn-outline-primary">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">1</th>
+          <td>
+            <img
+              src="images/bike-2.jpg"
+              class="card-img-top basket-img"
+              alt="bike picture"
+            />
+          </td>
+          <td>ZOOK7</td>
+          <td>
+            <form class="form-inline">
+              <div class="form-group">
+                <input
+                  class="form-control mx-sm-3"
+                  aria-describedby="passwordHelpInline"
+                  type="number"
+                  min="1"
+                  id="form-quantity"
+                  placeholder="Quantity"
+                />
+              </div>
+              <button type="submit" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </form>
+          </td>
+          <td>799€</td>
+          <td>799€</td>
+          <td>
+            <button class="btn btn-outline-primary">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>
+            <img
+              src="images/bike-3.jpg"
+              class="card-img-top basket-img"
+              alt="bike picture"
+            />
+          </td>
+          <td>KIWIT</td>
+          <td>
+            <form class="form-inline">
+              <div class="form-group">
+                <input
+                  class="form-control mx-sm-3"
+                  aria-describedby="passwordHelpInline"
+                  type="number"
+                  min="1"
+                  id="form-quantity"
+                  placeholder="Quantity"
+                />
+              </div>
+              <button type="submit" class="btn btn-outline-primary">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </button>
+            </form>
+          </td>
+          <td>899€</td>
+          <td>899€</td>
+          <td>
+            <button class="btn btn-outline-primary">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </td>
+        </tr> -->
+        <!-- <tr class="white-row">
+          <th></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Total Basket:</td>
+          <td>3056€</td>
+          <td></td>
+        </tr> -->
+        <tr class="white-row table-borderless">
+          <th></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <button class="btn btn-outline-primary btn--checkout">
+              Checkout
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
