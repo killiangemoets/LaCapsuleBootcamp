@@ -74,3 +74,9 @@ tr {
 .btn:hover #trash {
   color: #fff;
 }
+
+.btn a {
+  background-color: red;
+  width: 100% !important;
+  height: 100% !important;
+}

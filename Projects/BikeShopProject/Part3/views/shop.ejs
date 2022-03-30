@@ -100,9 +100,10 @@
             <td><%= dataCardBike[i].price %>€</td>
             <td><%= dataCardBike[i].price * dataCardBike[i].quantity %>€</td>
             <td>
-              <button class="btn btn-outline-primary"><a href="/delete-shop?id=<%= i %>">
+              <a href="/delete-shop?id=<%= i %>">
+                <button class="btn btn-outline-primary">
                 <i class="fa-solid fa-trash-can" id="trash"></i>
-              </a></button>
+              </button></a>
             </td>
           </tr>
           <%

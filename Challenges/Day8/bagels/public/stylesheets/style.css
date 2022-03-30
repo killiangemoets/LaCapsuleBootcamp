@@ -1,0 +1,82 @@
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+  background-color: #444;
+}
+
+header {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1.2rem 20rem;
+  border-radius: 8px;
+  background-image: linear-gradient(to bottom, #b2c5fa, #edf0fc);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 6.4rem; */
+}
+
+.logo {
+  font-size: 2rem;
+  color: #333;
+}
+
+.btn {
+  padding: 0.4rem 1.6rem;
+  font-size: 1.6rem;
+  border-radius: 8px;
+}
+
+main {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-title {
+  display: block;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+.card {
+  width: 24rem;
+  /* height: 30rem; */
+  background-color: #875ee7;
+  font-size: 1.4rem;
+}
+
+.card-img-top {
+  width: 100%;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.card-text {
+  text-align: center;
+}
