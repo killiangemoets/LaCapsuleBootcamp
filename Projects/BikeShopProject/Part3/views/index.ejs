@@ -24,7 +24,7 @@
 
   <body>
     <nav class="navbar navbar-light bg-dark">
-      <a class="navbar" id="header-logo" href="index.ejs">
+      <a class="navbar" id="header-logo" href="/">
         <img
           src="images/bike-logo.svg"
           width="50"
@@ -59,7 +59,7 @@
                 <div>
                   <p class="card-text"><%= dataBike[i].price %>€</p>
                 </div>
-                <a href="/shop" class="btn btn-outline-primary">Buy</a>
+                <a href="/shop?name=<%= dataBike[i].name %>&urlImage=<%= dataBike[i].urlImage %>&price=<%= dataBike[i].price %>" class="btn btn-outline-primary">Buy</a>
               </div>
             </div>
           </div>
@@ -68,126 +68,7 @@
         <%
       }
       %>
-        <!-- <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="h-100 card pt-2">
-            <img
-              src="images/bike-1.jpg"
-              class="card-img-top"
-              alt="bike picture"
-            />
-            <div class="card-body">
-              <h5 class="card-title">BIKO45</h5>
-              <div
-                class="price-and-buy d-flex justify-content-center align-items-center"
-              >
-                <div>
-                  <p class="card-text">679€</p>
-                </div>
-                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="h-100 card pt-2">
-            <img
-              src="images/bike-2.jpg"
-              class="card-img-top"
-              alt="bike picture"
-            />
-            <div class="card-body">
-              <h5 class="card-title">ZOOK7</h5>
-              <div
-                class="price-and-buy d-flex justify-content-center align-items-center"
-              >
-                <div>
-                  <p class="card-text">799€</p>
-                </div>
-                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="h-100 card pt-2">
-            <img
-              src="images/bike-1.jpg"
-              class="card-img-top"
-              alt="bike picture"
-            />
-            <div class="card-body">
-              <h5 class="card-title">LIK089</h5>
-              <div
-                class="price-and-buy d-flex justify-content-center align-items-center"
-              >
-                <div>
-                  <p class="card-text">839€</p>
-                </div>
-                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="h-100 card pt-2">
-            <img
-              src="images/bike-1.jpg"
-              class="card-img-top"
-              alt="bike picture"
-            />
-            <div class="card-body">
-              <h5 class="card-title">GEW08</h5>
-              <div
-                class="price-and-buy d-flex justify-content-center align-items-center"
-              >
-                <div>
-                  <p class="card-text">1249€</p>
-                </div>
-                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="h-100 card pt-2">
-            <img
-              src="images/bike-1.jpg"
-              class="card-img-top"
-              alt="bike picture"
-            />
-            <div class="card-body">
-              <h5 class="card-title">KIWIT</h5>
-              <div
-                class="price-and-buy d-flex justify-content-center align-items-center"
-              >
-                <div>
-                  <p class="card-text">899€</p>
-                </div>
-                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="h-100 card pt-2">
-            <img
-              src="images/bike-1.jpg"
-              class="card-img-top"
-              alt="bike picture"
-            />
-            <div class="card-body">
-              <h5 class="card-title">NASAY</h5>
-              <div
-                class="price-and-buy d-flex justify-content-center align-items-center"
-              >
-                <div>
-                  <p class="card-text">1399€</p>
-                </div>
-                <a href="shop.ejs" class="btn btn-outline-primary">Buy</a>
-              </div>
-            </div>
-          </div>
-        </div> -->
+       
       </div>
     </div>
     <!-- Scripts ------------------------------------------- -->

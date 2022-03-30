@@ -26,7 +26,7 @@
   <body>
     <!-- header -->
     <nav class="navbar navbar-light bg-dark">
-      <a class="navbar" id="header-logo" href="index.ejs">
+      <a class="navbar" id="header-logo" href="/">
         <img
           src="images/bike-logo.svg"
           width="50"
@@ -40,7 +40,7 @@
 
     <nav aria-label="breadcrumb" class="menu">
       <ol class="breadcrumb menu">
-        <li class="breadcrumb-item"><a href="index.ejs">Shop</a></li>
+        <li class="breadcrumb-item"><a href="/">Shop</a></li>
         <li class="breadcrumb-item active" aria-current="page">Basket</li>
       </ol>
     </nav>
@@ -64,21 +64,21 @@
         let totalPrice = 0;
         %>
         <%
-        for(var i=0; i<dataBike.length; i++){
+        for(var i=0; i<dataCardBike.length; i++){
           %>
 
           <tr>
             <th scope="row"><%= i %></th>
             <td>
               <img
-                src="<%= dataBike[i].urlImage %>"
+                src="<%= dataCardBike[i].urlImage %>"
                 class="card-img-top basket-img"
                 alt="bike picture"
               />
             </td>
-            <td><%= dataBike[i].name %></td>
+            <td><%= dataCardBike[i].name %></td>
             <td>
-              <form class="form-inline">
+              <form class="form-inline" action="/update-shop" method="post">
                 <div class="form-group">
                   <input
                     class="form-control mx-sm-3"
@@ -87,24 +87,26 @@
                     min="1"
                     id="form-quantity"
                     placeholder="Quantity"
-                    value = "<%= dataBike[i].quantity %>"
+                    name="quantity"
+                    value = "<%= dataCardBike[i].quantity %>"
                   />
+                  <input type="hidden" name="id" value="<%= i %>">
                 </div>
                 <button type="submit" class="btn btn-outline-primary">
                   <i class="fa-solid fa-arrows-rotate"></i>
                 </button>
               </form>
             </td>
-            <td><%= dataBike[i].price %>€</td>
-            <td><%= dataBike[i].price * dataBike[i].quantity %>€</td>
+            <td><%= dataCardBike[i].price %>€</td>
+            <td><%= dataCardBike[i].price * dataCardBike[i].quantity %>€</td>
             <td>
-              <button class="btn btn-outline-primary">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
+              <button class="btn btn-outline-primary"><a href="/delete-shop?id=<%= i %>">
+                <i class="fa-solid fa-trash-can" id="trash"></i>
+              </a></button>
             </td>
           </tr>
           <%
-          totalPrice += dataBike[i].price * dataBike[i].quantity;
+          totalPrice += dataCardBike[i].price * dataCardBike[i].quantity;
           %>
 
           <%

@@ -70,3 +70,7 @@ tr {
 .white-row {
   background-color: #fff !important;
 }
+
+.btn:hover #trash {
+  color: #fff;
+}
