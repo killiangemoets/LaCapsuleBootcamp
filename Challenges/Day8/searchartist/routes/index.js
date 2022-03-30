@@ -56,8 +56,14 @@ router.post("/result", function (req, res, next) {
   console.log(req.body);
   const artistToPost = req.body.artist;
 
+  if (artistToPost === "") {
+    res.render("index");
+    // return;
+  }
+
   const results = musics.find(
-    (music) => music.artist.indexOf(artistToPost) > -1
+    (music) =>
+      music.artist.toLowerCase().indexOf(artistToPost.toLowerCase()) > -1
   );
   res.render("result", {
     musicInformation: results,

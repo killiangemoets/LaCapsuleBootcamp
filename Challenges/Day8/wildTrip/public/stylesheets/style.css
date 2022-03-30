@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  /* width: 100vw; */
+  /* padding-bottom: 50px; */
+  font-family: sans-serif;
+}
+
+.jumbotron_image {
+  background-image: url("../images/photo1.jpg");
+  background-position: bottom;
+  background-size: cover;
+  height: 100%;
+  padding: 0;
+}
+
+.jumbotron_display {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.jumbotron_button {
+  width: 200px;
+}
+
+.jumbotron_display h1 {
+  margin-bottom: 20px;
+}
+
+.jumbotron_display h3 {
+  margin-bottom: 60px;
+  font-size: 24px;
+}
+
+.purpple {
+  background: linear-gradient(to top, #9d50bb, #6e48aa);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 100px;
+}
+
+.purpple h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.card h3 {
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 14px;
+}
