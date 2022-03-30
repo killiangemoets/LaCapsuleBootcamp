@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shozom</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h3 id="logo">Shozom</h3>
+      <form class="search-form" action="/result" method="post">
+        <input
+          id="input-word"
+          type="text"
+          placeholder="Enter an artist name"
+          name="artist"
+        />
+        <button class="btn" id="btn--search">Search</button>
+      </form>
+    </header>
+    <main>
+
+      <%
+        if(musicInformation){
+      %>
+      <h1 id="artist"><%= musicInformation.artist %></h1>
+      <h2 id="best-songs">Best songs</h2>
+      <ul id="songs">
+        <%
+        for(var i=0; i<musicInformation.favorite_musics.length; i++){
+         %>
+        <li><%= musicInformation.favorite_musics[i] %></li>
+        <%
+        }
+        %>
+
+        <% 
+      } else {
+      %>
+        <h1 id="artist">Artist not found.</h1>
+
+
+      <% } %>
+      </ul>
+    </main>
+  </body>
+</html>

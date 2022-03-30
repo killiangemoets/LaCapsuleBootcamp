@@ -1,0 +1,124 @@
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #fff;
+  background-image: linear-gradient(to right bottom, #b2c5fa, #dbaeff);
+}
+
+header {
+  margin: 0 auto;
+  padding: 1.2rem 6.4rem;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  color: #a2bbfd;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 3.2rem;
+  border-bottom: 4px solid #dbaeff;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 8px;
+}
+
+.search-form input {
+  padding: 0.8rem 1.2rem;
+  font-size: 2rem;
+  color: #a2bbfd;
+
+  /* box-shadow: inner 2px solid #a2bbfd; */
+  border: none;
+  box-shadow: inset 0 0 0 2px #a2bbfd;
+  border-radius: 8px;
+}
+.search-form input::placeholder {
+  color: #b2c5fa;
+}
+
+.search-form input:focus {
+  outline: none;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  padding: 0.8rem 1.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+
+  transition: all 0.3s;
+  background-color: #a2bbfd;
+  color: #ffff;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #dbaeff;
+  color: #fff;
+}
+
+main {
+  padding: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#artist {
+  font-size: 6.4rem;
+  margin-bottom: 6.4rem;
+  font-weight: 700;
+}
+
+#best-songs {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 3.6rem;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+#songs {
+  list-style: none;
+  font-size: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* #songs li {
+} */
