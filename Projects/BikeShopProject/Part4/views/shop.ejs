@@ -47,6 +47,11 @@
 
     <h1 class="basket-title">Basket</h1>
 
+
+    <%
+    if (dataCardBike.length >0){
+      %>
+
     <table class="table">
       <thead>
         <tr class="white-row">
@@ -113,9 +118,6 @@
           <%
         }
         %>
-
-
-
           <tr class="white-row">
             <th></th>
             <td></td>
@@ -142,6 +144,15 @@
       </tbody>
     </table>
 
+    <%
+  } else{
+  %>
+
+  <p class="empty-basket-message">No article in the basket</p>
+
+  <%
+  }
+  %>
     <!-- scripts -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

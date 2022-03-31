@@ -1,0 +1,66 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #130f40;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.input {
+  width : 250px;
+  height: 36px;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+}
+.picto {
+  height: 60px;
+  vertical-align: middle;
+  margin-right:15px;
+}
+#robot {
+  height: 100px;
+  margin-right:15px;
+  vertical-align: bottom;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  text-shadow: none;
+  position: relative;
+  background: #e1e1e1;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s;
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 185px;
+  height: 44px;
+  border-radius: 3px;
+  margin: .4em;
+  padding: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #1dd1a1;
+}
+
+a {
+  color: #ff7979;
+  text-decoration: none;
+}
