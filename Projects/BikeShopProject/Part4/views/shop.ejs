@@ -10,7 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap"
       rel="stylesheet"
@@ -28,7 +28,7 @@
     <nav class="navbar navbar-light bg-dark">
       <a class="navbar" id="header-logo" href="/">
         <img
-          src="images/bike-logo.svg"
+          src="../images/bike-logo.svg"
           width="50"
           height="50"
           class="logo"
@@ -76,14 +76,14 @@
             <th scope="row"><%= i %></th>
             <td>
               <img
-                src="<%= dataCardBike[i].urlImage %>"
+                src="../<%=dataCardBike[i].urlImage %>"
                 class="card-img-top basket-img"
                 alt="bike picture"
               />
             </td>
             <td><%= dataCardBike[i].name %></td>
             <td>
-              <form class="form-inline" action="/update-shop" method="post">
+              <form class="form-inline" action="/shop/update-shop" method="post">
                 <div class="form-group">
                   <input
                     class="form-control mx-sm-3"
@@ -105,7 +105,7 @@
             <td><%= dataCardBike[i].price %>€</td>
             <td><%= dataCardBike[i].price * dataCardBike[i].quantity %>€</td>
             <td>
-              <a href="/delete-shop?id=<%= i %>">
+              <a href="/shop/delete-shop?id=<%= i %>">
                 <button class="btn btn-outline-primary">
                 <i class="fa-solid fa-trash-can" id="trash"></i>
               </button></a>

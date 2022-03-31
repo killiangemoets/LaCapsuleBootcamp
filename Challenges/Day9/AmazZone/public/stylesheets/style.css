@@ -1,0 +1,39 @@
+body{
+  height: 100vh;
+}
+
+/* HEADER */
+#shop-header{
+  height: 8vh;
+}
+
+.title{
+  font-size: 25px;
+  background: linear-gradient(to top, #606c88, #3f4c6b);
+  color: #fff;
+}
+
+
+/* BODY */
+.background{
+  background: linear-gradient(to top, #525252, #3d72b4);
+  height: 92vh;
+}
+
+.card{
+  text-align: center;
+  width: 18rem;
+  height: 20rem
+}
+
+.shopping{
+  width: 30px;
+}
+
+.list-group{
+  width: 20vw;
+}
+
+h2{
+  color: #fff;
+}
