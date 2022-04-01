@@ -58,6 +58,9 @@ router.get("/", function (req, res, next) {
 router.get("/success", function (req, res, next) {
   res.render("success", { dataBike: dataBike });
 });
+router.get("/cancel", function (req, res, next) {
+  res.render("cancel", { dataBike: dataBike });
+});
 router.get("/shop", function (req, res, next) {
   if (!req.session.dataCardBike) req.session.dataCardBike = [];
 
@@ -127,7 +130,7 @@ router.post("/create-checkout-session", async (req, res) => {
     line_items: basket,
     mode: "payment",
     success_url: `${YOUR_DOMAIN}/success`,
-    cancel_url: `${YOUR_DOMAIN}/shop`,
+    cancel_url: `${YOUR_DOMAIN}/cancel`,
   });
 
   res.redirect(303, session.url);
