@@ -56,6 +56,7 @@ router.get("/", function (req, res, next) {
   res.render("index", { dataBike: dataBike });
 });
 router.get("/success", function (req, res, next) {
+  req.session.dataCardBike = [];
   res.render("success", { dataBike: dataBike });
 });
 router.get("/cancel", function (req, res, next) {

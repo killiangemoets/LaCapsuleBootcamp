@@ -10,7 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap"
       rel="stylesheet"
@@ -22,7 +22,7 @@
     <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
       <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Wild Trips</a>
+        <a class="navbar-brand" href="/">Wild Trips</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -36,26 +36,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-            <a class="nav-link active" href="#">Trips</a>
-            <a class="nav-link" href="#">New</a>
+            <a class="nav-link" href="/">Home</a>
+            <a class="nav-link active" href="/trips">Trips</a>
+            <a class="nav-link" href="/new">New</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <main class="purpple">
-
+    <main class="purpple">      
       <div class="trip-container">
-        <div class="img-content">
           <img class="card-img-top" src="<%= trip.image %>" alt="Card image cap">
-          <button class="btn btn-danger">Delete</button>
-        </div>
-        <div class="text-content">
-          <h4 class="destionation-title"><%= trip.name %></h4>
+          <div class="text-content">
+          <h4 class="destination-title"><%= trip.name %></h4>
           <p class="destionation-description"><%= trip.description %></p>
-          <button class="btn btn-primary">Return</button>
         </div>
+
+        <form action="/trips" method="post">
+          <input type="hidden" name="id" value="<%= id %>">
+          <button class="btn btn-danger" type="submit" id="checkout-button">Delete</button>
+        </form>
+          <a id="btn-return" href="/trips"><button class="btn btn-primary">Return</button></a>
       </div>
 
 

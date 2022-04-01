@@ -1,13 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Darker+Grotesque&display=swap"
+      rel="stylesheet"
+    />
+    <title>Wild Trip</title>
+  </head>
 
-<head>
-  <title>Wild Trips</title>
-</head>
+  <body>
+    <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+      <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Wild Trips</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/trips">Trips</a>
+            <a class="nav-link active" href="/new">New</a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
-<body>
+    <main class="purpple">
+      <h2 class="title-new">Add a new Trip</h2>
 
-
-</body>
-
+      <div class="form-section">
+      <form
+        id="edit-user-form"
+        class="add-trip-form"
+        action="/update"
+        method="post"
+      >
+        <div>
+          <label for="select-destination">Destination:</label>
+          <select id="select-destination" name="name" required>
+            <option value="">Pleace choose a destination:</option>
+            <option value="Bora-Bora">Bora-Bora</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Miami">Miami</option>
+            <option value="Panama">Panama</option>
+            <option value="Paris">Paris</option>
+          </select>
+          </div>
+          <div>
+          <label for="about">Description:</label>
+          <input
+            id="about"
+            type="text"
+            placeholder="about the trip"
+            name="description"
+            required
+          />
+        </div>
+          <div>
+          <label for="image-input">Image:</label>
+          <input
+            id="image-input"
+            type="text"
+            name="image"
+            required
+          />
+        </div>
+          <button class="btn btn-primary" type="submit" id="checkout-button">
+            Add
+          </button>
+        </div>
+      </form>
+    </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

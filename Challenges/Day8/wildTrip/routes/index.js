@@ -33,7 +33,28 @@ router.get("/trips", function (req, res, next) {
 });
 
 router.get("/card", function (req, res, next) {
-  res.render("card", { trip: travel[req.query.trip_id] });
+  res.render("card", {
+    trip: travel[req.query.id],
+    id: req.query.id,
+  });
+});
+
+router.post("/trips", function (req, res, next) {
+  travel.splice(req.body.id, 1);
+  res.render("trips", { trips: travel });
+});
+
+router.get("/new", function (req, res, next) {
+  res.render("new");
+});
+
+router.post("/update", function (req, res, next) {
+  travel.push({
+    name: req.body.name,
+    image: req.body.image,
+    description: req.body.description,
+  });
+  res.render("trips", { trips: travel });
 });
 
 module.exports = router;
