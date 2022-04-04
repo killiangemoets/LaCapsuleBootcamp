@@ -65,6 +65,7 @@ router.get("/cancel", function (req, res, next) {
 router.get("/shop", function (req, res, next) {
   if (!req.session.dataCardBike) req.session.dataCardBike = [];
 
+  console.log(req.query);
   if (!isEmpty(req.query)) {
     let bikeAlreadyInTheCard = false;
     req.session.dataCardBike.forEach((bike) => {
@@ -97,7 +98,7 @@ router.get("/shop/delete-shop", function (req, res, next) {
 });
 
 router.post("/shop/update-shop", function (req, res, next) {
-  if (!isEmpty(req.body)) {
+  if (req.body.quantity !== "") {
     req.session.dataCardBike[req.body.id].quantity = req.body.quantity;
   }
 
