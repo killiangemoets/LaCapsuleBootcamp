@@ -15,8 +15,8 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="stylesheet" href="./style/style-copy.css" />
-    <link rel="stylesheet" href="./style/queries.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/queries.css" />
     <title>WeatherApp</title>
   </head>
   <body>
@@ -31,15 +31,16 @@
     <div class="container">
       <div class="grid--2cols">
         <div class="form-section">
-          <form class="add-form">
+          <form class="add-form"  action="/weather" method="post">
             <input
               type="text"
               placeholder="enter city name"
               name="city"
               class="add-city"
             />
-            <button class="btn--form">Add</button>
+            <button type="submit" class="btn--form">Add</button>
           </form>
+          <p class="error-message <%= renderErrorMessage? "":"hidden"%>">Location not found</p>
         </div>
         <div class="map-section">
           <img src="images/map.png" class="card-img-top" alt="bike picture" />
@@ -49,47 +50,53 @@
             Update Cities <i class="fa-solid fa-arrows-rotate"></i>
           </h2>
           <div class="city-cards">
-            <div class="city-card">
-              <div>
-                <h3 class="city-title">Paris</h3>
+
+            <%
+            if (cityList.length >0){
+              %>
+
+            <%
+            for(var i=0; i<cityList.length; i++){
+              %>
+
+              <div class="city-card">
+                <div class="city-title-box">
+                  <p class="city-title"><%= cityList[i].name %></p>
+                </div>
+                <div class="meteo">
+                  <p class="meteo-text"><%= cityList[i].description %></p>
+                  <img
+                    src="<%= cityList[i].urlImage %>"
+                    class="img-weather"
+                    alt="Weather picture"
+                  />
+                  <p class="max-temp"><%= cityList[i].tmin %>°C</p>
+                  <p class="min-temp"><%= cityList[i].tmax %>°C</p>
+                </div>
+                <div>
+                  <a href="/weather?delete=<%=i%>">
+                    <button class="delete-btn">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                  </button>
+                </a>
+                </div>
               </div>
-              <div class="meteo">
-                <p class="meteo-text">nuageux</p>
-                <img
-                  src="images/picto-1.png"
-                  class="img-weather"
-                  alt="Weather picture"
-                />
-                <p class="max-temp">7.22°C</p>
-                <p class="min-temp">5.56°C</p>
-              </div>
-              <div>
-                <button class="delete-btn">
-                  <i class="fa-regular fa-circle-xmark"></i>
-                </button>
-              </div>
-            </div>
-            <div class="city-card">
-              <div>
-                <h3 class="city-title">Paris</h3>
-              </div>
-              <div class="meteo">
-                <p class="meteo-text">nuageux</p>
-                <img
-                  src="images/picto-1.png"
-                  class="img-weather"
-                  alt="Weather picture"
-                />
-                <p class="max-temp">7.22°C</p>
-                <p class="min-temp">5.56°C</p>
-              </div>
-              <div>
-                <button class="delete-btn">
-                  <i class="fa-regular fa-circle-xmark"></i>
-                </button>
-              </div>
-            </div>
-          </div>
+
+
+              <%
+            }
+            %>
+
+            <%
+          } else{
+          %>
+
+          <p class="empty-list-message">No cities in the list.</p>
+
+          <%
+          }
+          %>
+
         </div>
       </div>
     </div>

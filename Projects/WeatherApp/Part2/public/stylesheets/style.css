@@ -4,12 +4,16 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none !important;
+}
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  text-decoration: none !important;
 }
 
 .empty {
@@ -51,22 +55,95 @@ a {
   color: #ffffff;
 }
 
-/* FORM SECTION */
+.container {
+  margin: 40px auto;
+}
+.grid--2cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
 
-.form-container {
+/* FORM SECTION */
+.form-section {
+  grid-column: 2 / 3;
+  width: 100%;
+}
+
+.form-add {
+  display: flex;
+}
+
+.add-form {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  border-radius: 8px;
+  width: calc(100% + 4px);
+
+  transition: all 0.5s;
 }
-.add-form {
+
+.add-form input {
+  padding: 12px;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+
+  border: 1px solid #ccc;
+
+  border-radius: 4px;
+}
+.add-form input::placeholder {
+  color: #999;
+}
+
+.btn--form,
+.btn--form:link,
+.btn--form:visited {
+  display: inline-block;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  height: 40px;
+  padding: 0px 12px;
+  font-size: 16px;
+
+  font-weight: 600;
+  text-align: center;
+  border-radius: 4px;
+
+  transition: all 0.3s;
+  background-color: #ffc107;
+  color: #333;
+
+  transform: translateX(-4px);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn--form:hover,
+.btn--form:active {
+  background-color: #e9af01;
 }
 
 /* METEO SECTION*/
 .update-title {
   font-size: 16px;
+  font-weight: 600;
+  color: #333;
   text-align: center;
+  margin-bottom: 20px;
 }
 
+.city-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .city-card {
   display: flex;
   flex-direction: row;
@@ -91,12 +168,13 @@ a {
 }
 
 .meteo-text {
+  font-size: 12px;
   margin: 0;
 }
 
 .img-weather {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
 }
 
 .max-temp,
@@ -127,21 +205,40 @@ a {
   text-decoration: none;
   cursor: pointer;
 
-  font-size: 12px;
-  height: 22px;
-  width: 22px;
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
   border-radius: 50%;
 
   transition: all 0.3s;
   background-color: #fff;
-  border: 2px solid rgb(250, 171, 53);
+  /* border: 2px solid rgb(250, 171, 53); */
   color: rgb(250, 171, 53);
 }
 
 .delete-btn:hover,
 .delete-btn:active {
-  border: 2px solid rgb(236, 141, 0);
+  /* border: 2px solid rgb(236, 141, 0); */
   color: rgb(236, 141, 0);
+}
+
+.empty-list-message {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+.hidden {
+  /* 1) Hide it visually */
+  opacity: 0;
+  /* 2) Make it unaccessible to mouse and keybord */
+  pointer-events: none;
+  /* 3) Hide it from screen readers */
+  visibility: hidden;
 }
