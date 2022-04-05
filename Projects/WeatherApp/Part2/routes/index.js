@@ -18,22 +18,7 @@ function isEmpty(obj) {
   return JSON.stringify(obj) === JSON.stringify({});
 }
 
-let cityList = [
-  {
-    name: "paris",
-    description: "nuageux",
-    urlImage: "images/picto-1.png",
-    tmin: 7.22,
-    tmax: 5.56,
-  },
-  {
-    name: "lyon",
-    description: "ciel dégagé",
-    urlImage: "images/picto-1.png",
-    tmin: 6,
-    tmax: 3.89,
-  },
-];
+let cityList = [];
 
 let renderErrorMessage = false;
 
