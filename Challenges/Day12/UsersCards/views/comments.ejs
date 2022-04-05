@@ -10,7 +10,7 @@
 
 <body>
 
-  <h1>Message(s) de mon contact</h1>
+  <h1>Commentaire(s) de mon contact</h1>
 
 
   <div class="container">
@@ -19,19 +19,18 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Message</li>
+          <li class="breadcrumb-item"><a href="/messages?id=<%= postId %>">Messages</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Commentaires</li>
         </ol>
       </nav>
 
       <div class="list-group">
 
-       <%for(var i =0; i<postsObj.length; i++){%>
-         <a href="/comments?id=<%= i+1 %>">
+       <%for(var i =0; i<commentsObj.length; i++){%>
           <div class="list-group-item list-group-item-action mt-2 mb-2 text-center">
-            <h5 class="mb-1"><u><%= postsObj[i].title %></u></h5>
-            <p class="mb-1"><%= postsObj[i].body %></p>
+            <h5 class="mb-1"><u><%= commentsObj[i].name %></u></h5>
+            <p class="mb-1"><%= commentsObj[i].body %></p>
           </div>
-        </a>
        <%}%>
 
       </div>

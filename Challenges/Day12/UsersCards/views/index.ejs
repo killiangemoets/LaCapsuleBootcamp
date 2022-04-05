@@ -18,7 +18,7 @@
 
       <%for(var i =0; i<resultObj.length; i++){%>
         <div class="card">
-          <a href="/messages?id=<%= i %>"><img src="images/<%= avatars[i%8] %>.svg" class="card-img-top pt-1"></a>
+          <a href="/messages?id=<%= i+1 %>"><img src="images/<%= avatars[i%avatars.length] %>.svg" class="card-img-top pt-1"></a>
           <div class="card-body">
             <h5 class="card-title"><%= resultObj[i].name %></h5>
             <p class="card-text"><%= resultObj[i].company.name %></p>

@@ -33,4 +33,17 @@ router.get("/messages", function (req, res, next) {
   res.render("posts", { postsObj });
 });
 
+router.get("/comments", function (req, res, next) {
+  const id = req.query.id;
+  const comments = request(
+    "GET",
+    `https://jsonplaceholder.typicode.com/comments?postId=${id}`
+  );
+
+  const commentsObj = JSON.parse(comments.body);
+
+  console.log(commentsObj);
+  res.render("comments", { commentsObj, postId: id });
+});
+
 module.exports = router;
