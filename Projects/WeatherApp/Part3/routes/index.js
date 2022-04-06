@@ -28,7 +28,7 @@ router.get("/", function (req, res, next) {
   res.render("index");
 });
 
-router.get("/update", async function (req, res, next) {
+router.get("/weather/update", async function (req, res, next) {
   let cityList = await cityModel.find();
 
   const weatherPromises = [];
@@ -47,7 +47,7 @@ router.get("/update", async function (req, res, next) {
           description: weatherInfosObj.weather[0].description,
           urlImage: `https://openweathermap.org/img/wn/${weatherInfosObj.weather[0].icon}@2x.png`,
           tmin: weatherInfosObj.main.temp_min,
-          tmax: weatherInfosObj.main.temp_max,
+          tmax: weatherInfosObj.main.temp_max + 100,
         }
       )
     );

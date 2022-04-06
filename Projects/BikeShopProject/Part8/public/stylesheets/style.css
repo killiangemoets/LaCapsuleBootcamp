@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+#header-logo,
+#header-logo:hover {
+  color: white;
+}
+
+#picture-header {
+  background-image: url("../images/bike-background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin: 0px !important;
+}
+
+.basket-title {
+  margin-left: 20px;
+}
+
+.empty-basket-message {
+  margin-left: 20px;
+  color: red;
+  font-size: 20px;
+  font-style: italic;
+}
+.card {
+  margin-bottom: 20px;
+}
+
+.basket-img {
+  width: 150px;
+}
+
+.price-and-buy {
+  gap: 10px;
+}
+
+.btn--checkout {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.menu {
+  width: 98%;
+  margin: 20px auto;
+}
+
+.form-basket {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  /* justify-items: center; */
+  width: 100%;
+}
+
+.form-basket input {
+  width: 100%;
+}
+
+tr {
+  background-color: rgb(245, 245, 245);
+  font-size: 20px;
+}
+
+.white-row {
+  background-color: #fff !important;
+}
+
+.btn:hover #trash {
+  color: #fff;
+}
+
+.btn a {
+  background-color: red;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.cancel-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.success-message {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 32px;
+}
+
+.success-text {
+  font-size: 24px;
+}
+
+#btn--cancel {
+  padding: 8px 16px;
+  font-size: 24px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+#arrow {
+  font-size: 20px;
+}
+
+#gif-bicycle {
+  border-radius: 50%;
+}
+
+#old-price {
+  text-decoration: line-through;
+}
+#new-price {
+  /* transform: translateX(10px); */
+  color: rgb(16, 201, 13);
+  font-weight: 700;
+}
+
+.cheap-bike {
+  /* box-shadow: 0 0 0 3px #00a8ff !important; */
+  border: 4px solid #00a8ff;
+  /* background-color: #cceeff; */
+}
+
+.container {
+  margin: 60px auto;
+}
+
+.stock-title {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.red-stock {
+  color: red;
+}
+
+.remove {
+  display: none;
+}
