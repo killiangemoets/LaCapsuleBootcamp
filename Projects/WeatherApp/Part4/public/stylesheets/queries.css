@@ -1,0 +1,12 @@
+/* rem and em do NOT depend on html font-size in media queries! Instead, 1rem = 1em = 16px */
+
+/**************************/
+/******* BELOW 576px ******/
+/**************************/
+
+@media (max-width: 36em) {
+  .grid--2cols {
+    display: flex;
+    flex-direction: column;
+  }
+}
