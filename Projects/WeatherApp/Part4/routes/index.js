@@ -31,8 +31,8 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/logout", function (req, res, next) {
-  req.session.currentID = "";
-  req.session.currentUsername = "";
+  req.session.currentID = null;
+  req.session.currentUsername = null;
   res.redirect("/");
 });
 
@@ -69,6 +69,10 @@ router.get("/weather/update", async function (req, res, next) {
 });
 
 router.get("/weather", async function (req, res, next) {
+  if (!req.session.currentID) {
+    return res.redirect("/");
+  }
+
   renderErrorMessage = false;
 
   if (!isEmpty(req.query)) {
