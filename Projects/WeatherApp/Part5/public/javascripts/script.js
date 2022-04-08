@@ -25,9 +25,22 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 //   popupAnchor: [-3, -76],
 // });
 
+let markups = [];
 cards.forEach((card) => {
-  L.marker([card.dataset.lat, card.dataset.long])
+  const markup = L.marker([card.dataset.lat, card.dataset.long])
     .addTo(map)
     .bindPopup(card.dataset.name)
     .openPopup();
+  markups.push(markup);
+
+  card.addEventListener("click", function (e) {
+    map.setView([card.dataset.lat, card.dataset.long], 10, {
+      animate: true,
+      pan: {
+        duration: 4,
+      },
+    });
+
+    markup.openPopup();
+  });
 });
