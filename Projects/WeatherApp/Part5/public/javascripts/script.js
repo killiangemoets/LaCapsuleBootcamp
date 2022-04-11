@@ -12,22 +12,26 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-// var customIcon = L.icon({
-//   iconUrl: "http://leafletjs.com/examples/custom-icons/leaf-green.png",
-//   shadowUrl: "http://leafletjs.com/examples/custom-icons/leaf-shadow.png",
+var customIcon = L.icon({
+  iconUrl:
+    "https://leafletjs.com/SlavaUkraini/examples/custom-icons/leaf-green.png",
+  shadowUrl:
+    "https://leafletjs.com/SlavaUkraini/examples/custom-icons/leaf-shadow.png",
 
-//   iconSize: [38, 95],
-//   shadowSize: [50, 64],
+  iconSize: [38, 95],
+  shadowSize: [50, 64],
 
-//   iconAnchor: [22, 94],
-//   shadowAnchor: [4, 62],
+  iconAnchor: [22, 94],
+  shadowAnchor: [4, 62],
 
-//   popupAnchor: [-3, -76],
-// });
+  popupAnchor: [-3, -76],
+});
 
 let markups = [];
 cards.forEach((card) => {
-  const markup = L.marker([card.dataset.lat, card.dataset.long])
+  const markup = L.marker([card.dataset.lat, card.dataset.long], {
+    icon: customIcon,
+  })
     .addTo(map)
     .bindPopup(card.dataset.name)
     .openPopup();
