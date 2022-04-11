@@ -1,6 +1,8 @@
 const { query } = require("express");
 var express = require("express");
 
+const Bike = require("./../models/bikeModel");
+
 // This is your test secret API key.
 const stripe = require("stripe")(
   "sk_test_51KjexnJNQutKRIOsRcOA3IOshaqmr6hANOTiJIiVdrsajHQcOZ2yDtXB2fttQnvGN1sHhSRUzDy5XY1yg2B1ITgq00DVdoxPnk"
@@ -17,57 +19,6 @@ function isEmpty(obj) {
 
   return JSON.stringify(obj) === JSON.stringify({});
 }
-
-var dataBike = [
-  {
-    name: "BIK045",
-    urlImage: "images/bike-1.jpg",
-    price: 679,
-    stock: 10,
-  },
-  {
-    name: "ZOOK7",
-    urlImage: "images/bike-2.jpg",
-    price: 799,
-    stock: 3,
-  },
-  {
-    name: "GEW08",
-    urlImage: "images/bike-4.jpg",
-    price: 1249,
-    stock: 0,
-  },
-  {
-    name: "KIWIT",
-    urlImage: "images/bike-5.jpg",
-    price: 899,
-    stock: 1,
-  },
-  {
-    name: "LIK089",
-    urlImage: "images/bike-3.jpg",
-    price: 839,
-    stock: 8,
-  },
-  {
-    name: "NASAY",
-    urlImage: "images/bike-6.jpg",
-    price: 1399,
-    stock: 12,
-  },
-];
-
-const getCheaperBikes = function () {
-  cheaperBikes = dataBike.map((bike, id) => {
-    return { price: bike.price, id };
-  });
-
-  cheaperBikes.sort(function (a, b) {
-    return a.price - b.price;
-  });
-
-  return cheaperBikes.map((bike) => bike.id).slice(0, 3);
-};
 
 const calculateCosts = function (card) {
   const totalBasket = card.reduce(
@@ -100,25 +51,21 @@ const calculateCosts = function (card) {
     shippingCost,
     expressShippingCosts,
     relayPointShippingCost,
-    sayHello(hey) {
-      console.log(hey);
-    },
   };
 };
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  cheaperBikes = getCheaperBikes();
-  console.log(cheaperBikes.find((el) => el === 1));
-  console.log(cheaperBikes);
-  res.render("index", { dataBike, cheaperBikes });
+router.get("/", async function (req, res, next) {
+  const dataBike = await Bike.find();
+  console.log(dataBike);
+
+  res.render("index", { dataBike });
 });
 router.get("/success", function (req, res, next) {
   req.session.dataCardBike = [];
-  res.render("success", { dataBike, cheaperBikes });
+  res.render("success");
 });
 router.get("/cancel", function (req, res, next) {
-  res.render("cancel", { dataBike, cheaperBikes });
+  res.render("cancel");
 });
 router.get("/shop", function (req, res, next) {
   if (!req.session.dataCardBike) req.session.dataCardBike = [];
