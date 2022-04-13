@@ -96,11 +96,13 @@ router.get("/charts", async function (req, res, next) {
   const numOrdersShipped = await orderModel
     .find({
       status_shipment: true,
+      status_payment: "validated",
     })
     .countDocuments();
   const numOrdersNotShipped = await orderModel
     .find({
       status_shipment: false,
+      status_payment: "validated",
     })
     .countDocuments();
 

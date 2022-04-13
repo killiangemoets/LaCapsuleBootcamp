@@ -99,7 +99,9 @@ new Chart(ctxPie, {
 
 var ctxLine = document.getElementById("chartLine");
 const turnoverData = JSON.parse(ctxLine.dataset.turnover);
-const xAxis = turnoverData.map((el) => el._id);
+const xAxis = turnoverData.map((el) =>
+  Intl.DateTimeFormat("en", { month: "long" }).format(new Date(el._id + ""))
+);
 const yAxis = turnoverData.map((el) => el.turnover);
 
 new Chart(ctxLine, {
@@ -117,6 +119,7 @@ new Chart(ctxLine, {
           above: "#9AECDB",
           below: "#9AECDB",
         },
+        lineTension: 0.4,
       },
     ],
   },
@@ -132,6 +135,11 @@ new Chart(ctxLine, {
       },
       legend: {
         display: false,
+      },
+    },
+    scales: {
+      y: {
+        suggestedMin: 0,
       },
     },
   },
