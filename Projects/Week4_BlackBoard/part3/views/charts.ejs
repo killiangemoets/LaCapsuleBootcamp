@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>BlackBoard</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom fonts for this template-->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet" />
+  </head>
+
+  <body id="page-top">
+    <!-- Navbar -->
+    <%- include('header'); %>
+
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <%- include('sidebar'); %>
+
+      <div id="content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 col-md-4 mb-3 chart">
+              <canvas
+                id="chartBar"
+                width="100"
+                height="100"
+                data-men="<%= numMen %>"
+                data-women="<%= numWomen %>"
+              ></canvas>
+            </div>
+            <div class="col-12 col-md-4 mb-3 chart">
+              <canvas
+                id="chartDoughnut"
+                width="100"
+                height="100"
+                data-read="<%= numReadMessages %>"
+                data-unread="<%= numUnreadMessages %>"
+              ></canvas>
+            </div>
+            <div class="col-12 col-md-4 mb-3 chart">
+              <canvas
+                id="chartPie"
+                width="100"
+                height="100"
+                data-shipped="<%= numOrdersShipped %>"
+                data-notshipped="<%= numOrdersNotShipped %>"
+              ></canvas>
+            </div>
+            <div class="col-12 col-md-4 mb-3 chart">
+              <canvas
+                id="chartLine"
+                width="100"
+                height="100"
+                data-turnover="<%= turnoverByMonthStr %>"
+              ></canvas>
+            </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Blackboard</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <!-- /.content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dataviz.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+  </body>
+</html>
