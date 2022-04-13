@@ -99,8 +99,13 @@ new Chart(ctxPie, {
 
 var ctxLine = document.getElementById("chartLine");
 const turnoverData = JSON.parse(ctxLine.dataset.turnover);
-const xAxis = turnoverData.map((el) =>
-  Intl.DateTimeFormat("en", { month: "long" }).format(new Date(el._id + ""))
+const xAxis = turnoverData.map(
+  (el) =>
+    Intl.DateTimeFormat("en", { month: "long" }).format(
+      new Date(el._id.month + "")
+    ) +
+    " " +
+    el._id.year
 );
 const yAxis = turnoverData.map((el) => el.turnover);
 

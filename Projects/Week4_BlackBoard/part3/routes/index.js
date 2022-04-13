@@ -107,10 +107,12 @@ router.get("/charts", async function (req, res, next) {
     .countDocuments();
 
   const aggregate = orderModel.aggregate();
+  aggregate.match({ status_payment: "validated" });
   aggregate.group({
-    _id: { $month: "$date_insert" },
+    _id: { year: { $year: "$date_insert" }, month: { $month: "$date_insert" } },
     turnover: { $sum: "$total" },
   });
+  aggregate.sort({ _id: 1 });
   console.log(aggregate);
   const turnoverByMonth = await aggregate.exec();
 
