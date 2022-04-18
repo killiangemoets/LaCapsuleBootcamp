@@ -1,0 +1,34 @@
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  background-color: #ddd !important;
+  display: flex;
+  justify-content: center;
+  padding-top: 3.2rem;
+}
+
+.dice-img {
+  border-radius: 16px;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.3);
+  width: 12rem;
+  height: 12rem;
+}
+
+.dices {
+  display: flex;
+  gap: 2rem;
+}

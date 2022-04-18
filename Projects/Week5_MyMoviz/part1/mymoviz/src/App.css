@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   font-family: sans-serif;
   font-weight: 400;
   line-height: 1;
@@ -19,6 +19,7 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 3.2rem;
+  padding-bottom: 4.2rem;
 }
 
 .content {
@@ -65,12 +66,6 @@ header {
 }
 
 /* MOVIES */
-.movie-card {
-}
-
-.movie-img {
-}
-
 .movie-content {
   display: flex;
   flex-direction: column;
@@ -92,9 +87,6 @@ header {
   color: #fff;
   padding: 0.1rem 0.6rem;
   border-radius: 6px;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 .movie-section,
@@ -106,7 +98,18 @@ header {
   color: rgb(228, 26, 26);
 }
 
+.star-yellow {
+  color: rgb(235, 201, 31);
+}
+
+.heart-icon {
+  cursor: pointer;
+}
 .btn-avis {
   font-size: 1.6rem !important;
   border-radius: 6px !important;
+}
+
+.movie-card {
+  height: 100% !important;
 }

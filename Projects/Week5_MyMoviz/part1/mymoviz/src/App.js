@@ -1,14 +1,15 @@
 // import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/navbar.js";
-import Movie from "./components/movie.js";
+import Navbar from "./components/navbar.jsx";
+import Movie from "./components/movie.jsx";
+import { Container, Row } from "reactstrap";
 
 const movies = [
   {
     name: "Star Wars: L'Ascension de Skywalker",
     desc: "La conclusion de la saga Skywalker. De nouvelles légendes vont naitre cette ...",
-    img: "img/stawars.jpg",
+    img: "images/starwars.jpg",
     vues: 3,
     note: 6,
     vote: 5,
@@ -16,7 +17,7 @@ const movies = [
   {
     name: "Maléfique: Le pouvoir du mal",
     desc: "Plusieurs années après avoir découvert pourquoi la plus célèbre méchante Disney avait un coeur ...",
-    img: "img/maleficent.jpg",
+    img: "images/maleficent.jpg",
     vues: 2,
     note: 5,
     vote: 3,
@@ -24,7 +25,7 @@ const movies = [
   {
     name: "Jumanji: The Next Level",
     desc: "L'équipe est de retour, mais le jeu a changé. Alors qu'ils retournent dans Jumanji pour secourir ...",
-    img: "img/jumani.jpg",
+    img: "images/jumanji.jpg",
     vues: 1,
     note: 2,
     vote: 8,
@@ -32,15 +33,7 @@ const movies = [
   {
     name: "Bad Boy 3",
     desc: "La conclusion de la saga Skywalker. De nouvelles légendes vont naitre cette ...",
-    img: "img/badboy3.jpg",
-    vues: 3,
-    note: 6,
-    vote: 9,
-  },
-  {
-    name: "Bad Boy 3",
-    desc: "La conclusion de la saga Skywalker. De nouvelles légendes vont naitre cette ...",
-    img: "img/badboy3.jpg",
+    img: "images/badboy3.jpg",
     vues: 3,
     note: 6,
     vote: 9,
@@ -48,7 +41,7 @@ const movies = [
   {
     name: "Frozen",
     desc: "La conclusion de la saga Skywalker. De nouvelles légendes vont naitre cette ...",
-    img: "img/frozen.jpg",
+    img: "images/frozen.jpg",
     vues: 3,
     note: 6,
     vote: 9,
@@ -56,7 +49,7 @@ const movies = [
   {
     name: "Terminator",
     desc: "La conclusion de la saga Skywalker. De nouvelles légendes vont naitre cette ...",
-    img: "img/terminator.jpg",
+    img: "images/terminator.jpg",
     vues: 3,
     note: 6,
     vote: 9,
@@ -64,7 +57,7 @@ const movies = [
   {
     name: "Once Upon A Time",
     desc: "La conclusion de la saga Skywalker. De nouvelles légendes vont naitre cette ...",
-    img: "img/one_upon.jpg",
+    img: "images/once_upon.jpg",
     vues: 3,
     note: 6,
     vote: 9,
@@ -72,9 +65,10 @@ const movies = [
 ];
 
 const createMovieCards = function (movies) {
-  const cards = movies.map((movie) => {
+  const cards = movies.map((movie, i) => {
     return (
       <Movie
+        key={i}
         movieName={movie.name}
         movieDesc={movie.desc}
         movieImg={movie.img}
@@ -95,9 +89,9 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <div className="container">
-          <div className="row">{createMovieCards(movies)}</div>
-        </div>
+        <Container>
+          <Row>{createMovieCards(movies)}</Row>
+        </Container>
       </main>
     </div>
   );

@@ -4,10 +4,18 @@ import { Card, CardImg, CardBody, CardText, Button } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faVideo, faStar } from "@fortawesome/free-solid-svg-icons";
 
-const createStars = function (numStars) {
+const createStars = function (numStars, rating = 0) {
   let stars = [];
   for (let i = 0; i < numStars; i++) {
-    stars.push(<FontAwesomeIcon className="star-icon" icon={faStar} />);
+    if (i < rating)
+      stars.push(
+        <FontAwesomeIcon
+          key={i}
+          className="star-icon star-yellow"
+          icon={faStar}
+        />
+      );
+    else stars.push(<FontAwesomeIcon className="star-icon" icon={faStar} />);
   }
   return stars;
 };
@@ -43,7 +51,7 @@ export default function Movie(props) {
           </div>
           <div>
             <p className="movie-section">
-              Avis Global: {createStars(10)}{" "}
+              Avis Global: {createStars(10, props.globalRating)}{" "}
               <span className="num-avis-global">
                 ({props.globalCountRating})
               </span>
@@ -52,7 +60,7 @@ export default function Movie(props) {
           <div>
             <p className="movie-section">{props.movieName}</p>
           </div>
-          <CardText className="movie-summary">{props.globalRating}</CardText>
+          <CardText className="movie-summary">{props.movieDesc}</CardText>
         </CardBody>
       </Card>
     </div>
