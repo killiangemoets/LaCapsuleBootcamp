@@ -25,10 +25,10 @@ router.post("/sign-up", async function (req, res, next) {
 
 router.post("/sign-in", async function (req, res, next) {
   var user = await userModel.findOne({ email: req.body.email });
+  console.log(req.body.password);
   if (user?.password == req.body.password) {
     req.session.currentID = user._id;
     req.session.currentUsername = user.username;
-
     res.redirect("/weather");
   } else {
     res.render("index");

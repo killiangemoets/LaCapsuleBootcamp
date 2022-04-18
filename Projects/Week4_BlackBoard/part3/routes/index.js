@@ -115,7 +115,7 @@ router.get("/charts", async function (req, res, next) {
   aggregate.sort({ _id: 1 });
   console.log(aggregate);
   const turnoverByMonth = await aggregate.exec();
-
+  console.log(turnoverByMonth);
   let turnoverByMonthStr = JSON.stringify(turnoverByMonth);
 
   res.render("charts", {
