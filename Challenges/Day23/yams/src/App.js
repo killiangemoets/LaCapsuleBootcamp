@@ -10,22 +10,23 @@ import * as modele from "./components/modele";
 import "./App.css";
 
 function App() {
-  const [diceValues, setDiceValues] = useState(modele.rollTheDices());
+  const [diceValues, setDiceValues] = useState([]);
   const [rollsCount, setRollsCount] = useState(modele.state.rollsCount);
+  const [possibilities, setPossibilities] = useState(
+    modele.state.possibilities
+  );
 
-  function handlerClickButtonsSection(e) {
-    const btn = e.target.closest(".btn");
+  function handleRollDices() {
+    if (rollsCount === 0) return;
+    setDiceValues(modele.rollTheDices());
+    setRollsCount(modele.decreaseRollCount());
+    modele.calculateNumberPossibilities();
+    modele.calculateCombinationPossibilities();
+    setPossibilities(modele.state.possibilities);
+  }
 
-    if (!btn) return;
-    if (btn.classList.contains("btn--roll")) {
-      if (rollsCount === 0) return;
-      setDiceValues(modele.rollTheDices());
-      setRollsCount(modele.decreaseRollCount());
-      console.log(rollsCount);
-    }
-    if (btn.classList.contains("btn--play")) {
-      console.log("Play");
-    }
+  function handlePlay() {
+    console.log("Play");
   }
 
   return (
@@ -39,20 +40,21 @@ function App() {
         </section>
         <section className="possibilities-section">
           <div className="numbers">
-            <Numbers />
+            <Numbers possibleScores={possibilities.numbers} />
           </div>
           <div className="combinations">
-            <Combinations />
+            <Combinations possibleScores={possibilities.combinations} />
           </div>
         </section>
         <section className="dices-section">
           <Dice diceValues={diceValues} />
         </section>
-        <section
-          className="buttons-section"
-          onClick={(e) => handlerClickButtonsSection(e)}
-        >
-          <Buttons rollsCount={rollsCount} />
+        <section className="buttons-section">
+          <Buttons
+            rollsCount={rollsCount}
+            handleRollDices={handleRollDices}
+            handlePlay={handlePlay}
+          />
         </section>
       </main>
     </div>

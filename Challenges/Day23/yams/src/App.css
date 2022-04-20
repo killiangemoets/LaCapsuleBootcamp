@@ -200,6 +200,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  height: 6rem;
 }
 
 .dice-img {
@@ -207,6 +208,10 @@ main {
   box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.3);
   width: 6rem;
   height: 6rem;
+}
+
+.block-dice {
+  border: 8px solid #333;
 }
 
 /* Buttons */
