@@ -1,0 +1,142 @@
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  background-color: #444 !important;
+  display: flex;
+  justify-content: center;
+  padding-top: 3.2rem;
+  padding-bottom: 4.2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* NAVBAR */
+header {
+  align-self: flex-start;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.8rem;
+}
+
+.logo-page {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 4rem;
+  height: 4rem;
+}
+.page-title {
+  color: #fff;
+  font-weight: 400;
+  font-size: 2.4rem;
+}
+
+.wishlist-btn {
+  font-size: 2rem !important;
+  border-radius: 8px !important;
+  padding: 1rem 2rem !important;
+}
+
+/* WHILIST */
+.dropdown-header {
+  margin-top: 0.4rem;
+  font-size: 3.6rem !important;
+  margin-bottom: 1rem !important;
+}
+.dropdown-item {
+  /* font-size: 3rem; */
+  padding: 1.2rem;
+}
+
+.wish-movie {
+  border: 1px solid #444;
+  padding: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wishlist-img {
+  /* width: 2rem; */
+  height: 8rem;
+}
+
+.wish-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+/* MOVIES */
+.movie-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.movie-content div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.movie-content p {
+  margin: 0;
+}
+
+.num-vues {
+  background-color: #6c757d;
+  color: #fff;
+  padding: 0.1rem 0.6rem;
+  border-radius: 6px;
+}
+
+.movie-section,
+.movie-summary {
+  font-size: 1.8rem;
+}
+
+.active-icon {
+  color: #e74c3c;
+}
+
+.heart-icon,
+.camera-icon,
+.star-icon {
+  cursor: pointer;
+}
+.btn-avis {
+  font-size: 1.6rem !important;
+  border-radius: 6px !important;
+}
+
+.movie-card {
+  height: 100% !important;
+}
