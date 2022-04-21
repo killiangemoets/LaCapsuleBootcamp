@@ -25,6 +25,13 @@ function App() {
     setPossibilities(modele.state.possibilities);
   }
 
+  function handleSelectPossibility(e) {
+    const score = e.target.closest(".score");
+    if (!score) return;
+    if (diceValues.length) {
+    }
+  }
+
   function handlePlay() {
     console.log("Play");
   }
@@ -38,7 +45,10 @@ function App() {
         <section className="title-section">
           <CurrentPlayer />
         </section>
-        <section className="possibilities-section">
+        <section
+          className="possibilities-section"
+          onClick={(e) => handleSelectPossibility(e)}
+        >
           <div className="numbers">
             <Numbers possibleScores={possibilities.numbers} />
           </div>

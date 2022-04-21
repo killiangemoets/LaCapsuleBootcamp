@@ -14,7 +14,7 @@ export const state = {
   round: 13,
   currentPlayer: 1,
   numPlayers: 3,
-  scores: [20, 12, 34],
+  scores: [0, 0, 0],
   gameBoards: [],
   currentDices: [],
   blockDices: [],
@@ -23,12 +23,15 @@ export const state = {
     numbers: {},
     combinations: {},
   },
+  selectedPossibility: -1,
 };
 
 export const rollTheDices = function () {
-  state.currentDices = [];
+  // state.currentDices = [];
+
   for (let i = 0; i < numDices; i++) {
-    state.currentDices.push(Math.trunc(Math.random() * 6) + 1);
+    if (!state.blockDices.filter((el) => el === i).length)
+      state.currentDices[i] = Math.trunc(Math.random() * 6) + 1;
   }
   return state.currentDices;
 };
@@ -39,13 +42,20 @@ export const decreaseRollCount = function () {
 };
 
 export const blockADice = function (index) {
+  // We can't use a find method bc return null when i=0
+
   if (!state.blockDices.filter((el) => el === index).length) {
     state.blockDices.push(index);
   } else {
     state.blockDices = state.blockDices.filter((el) => el !== index);
   }
-  console.log(state.blockDices);
   return state.blockDices;
+};
+
+export const updateSelectedPossibility = function (score) {
+  state.selectedPossibility = score;
+  console.log(state.selectedPossibility);
+  return state.selectedPossibility;
 };
 
 export const calculateNumberPossibilities = function () {

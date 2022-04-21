@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import * as modele from "../components/modele";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -7,33 +8,26 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
+  const [scores] = useState(modele.state.scores);
+
+  const renderScores = function (scores) {
+    const scoreCards = scores.map((score, i) => {
+      return (
+        <div key={i} className="total-score">
+          <h6 className="player-num">Player {i + 1}</h6>
+          <h3 className="player-score">{score}</h3>
+        </div>
+      );
+    });
+    return scoreCards;
+  };
+
   return (
     <>
       <button className="btn--top btn--return">
         <FontAwesomeIcon className="header-icon" icon={faCircleArrowLeft} />
       </button>
-      <div className="total-scores">
-        <div className="total-score">
-          <h6 className="player-num">Player 1</h6>
-          <h3 className="player-score">23</h3>
-        </div>
-        <div className="total-score leader">
-          <h6 className="player-num">Player 2</h6>
-          <h3 className="player-score">48</h3>
-        </div>
-        <div className="total-score">
-          <h6 className="player-num">Player 3</h6>
-          <h3 className="player-score">16</h3>
-        </div>
-        <div className="total-score">
-          <h6 className="player-num">Player 4</h6>
-          <h3 className="player-score">4</h3>
-        </div>
-        <div className="total-score">
-          <h6 className="player-num">Player 5</h6>
-          <h3 className="player-score">42</h3>
-        </div>
-      </div>
+      <div className="total-scores">{renderScores(scores)}</div>
 
       <button className="btn--top btn--instruction">
         <FontAwesomeIcon className="header-icon" icon={faCircleInfo} />

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./buttons";
 import * as modele from "../components/modele";
 
 export default function Dice(props) {
@@ -7,8 +6,7 @@ export default function Dice(props) {
   const handleBlockDice = function (i) {
     setBlockDices([...modele.blockADice(i)]);
   };
-  // console.log(blockDices);
-  // console.log(blockDices.find((el) => el === 0));
+
   const renderDices = function (values) {
     const dices = values.map((value, i) => {
       const dice = `images/dice-${value}.png`;
@@ -16,6 +14,7 @@ export default function Dice(props) {
         <img
           key={i}
           className={
+            // We can't use a find method bc return null when i=0
             blockDices.filter((el) => el === i).length
               ? "dice-img block-dice"
               : "dice-img"

@@ -6,7 +6,10 @@ export default function Buttons(props) {
       <button className="btn btn--roll" onClick={() => props.handleRollDices()}>
         Roll <span className="num-roll">{props.rollsCount}</span>
       </button>
-      <button className="btn btn--play" onClick={() => props.handlePlay()}>
+      <button
+        className="btn btn--play btn--off"
+        onClick={() => props.handlePlay()}
+      >
         Play
       </button>
     </>
