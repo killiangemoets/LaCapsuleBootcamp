@@ -17,7 +17,12 @@ export default function Combinations(props) {
         <div className="icon">
           <FontAwesomeIcon className="dice-icon" icon={faDiceOne} />
         </div>
-        <div className="score one" data-value={props.possibleScores.one}>
+        <div
+          className="score one"
+          onClick={(e) =>
+            props.handleSelectPossibility(e, props.possibleScores.one)
+          }
+        >
           {props.possibleScores.one}
         </div>
       </div>
@@ -25,7 +30,12 @@ export default function Combinations(props) {
         <div className="icon">
           <FontAwesomeIcon className="dice-icon" icon={faDiceTwo} />
         </div>
-        <div className="score two" data-value={props.possibleScores.two}>
+        <div
+          className="score two"
+          onClick={(e) =>
+            props.handleSelectPossibility(e, props.possibleScores.two)
+          }
+        >
           {props.possibleScores.two}
         </div>
       </div>
@@ -33,7 +43,12 @@ export default function Combinations(props) {
         <div className="icon">
           <FontAwesomeIcon className="dice-icon" icon={faDiceThree} />
         </div>
-        <div className="score three" data-value={props.possibleScores.three}>
+        <div
+          className="score three"
+          onClick={(e) =>
+            props.handleSelectPossibility(e, props.possibleScores.three)
+          }
+        >
           {props.possibleScores.three}
         </div>
       </div>
@@ -41,7 +56,12 @@ export default function Combinations(props) {
         <div className="icon four">
           <FontAwesomeIcon className="dice-icon" icon={faDiceFour} />
         </div>
-        <div className="score four" data-value={props.possibleScores.four}>
+        <div
+          className="score four"
+          onClick={(e) =>
+            props.handleSelectPossibility(e, props.possibleScores.four)
+          }
+        >
           {props.possibleScores.four}
         </div>
       </div>
@@ -49,7 +69,12 @@ export default function Combinations(props) {
         <div className="icon">
           <FontAwesomeIcon className="dice-icon" icon={faDiceFive} />
         </div>
-        <div className="score five" data-value={props.possibleScores.five}>
+        <div
+          className="score five"
+          onClick={(e) =>
+            props.handleSelectPossibility(e, props.possibleScores.five)
+          }
+        >
           {props.possibleScores.five}
         </div>
       </div>
@@ -57,7 +82,12 @@ export default function Combinations(props) {
         <div className="icon">
           <FontAwesomeIcon className="dice-icon" icon={faDiceSix} />
         </div>
-        <div className="score six" data-value={props.possibleScores.six}>
+        <div
+          className="score six"
+          onClick={(e) =>
+            props.handleSelectPossibility(e, props.possibleScores.six)
+          }
+        >
           {props.possibleScores.six}
         </div>
       </div>

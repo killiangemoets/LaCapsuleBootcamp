@@ -45,15 +45,18 @@ function App() {
         <section className="title-section">
           <CurrentPlayer />
         </section>
-        <section
-          className="possibilities-section"
-          onClick={(e) => handleSelectPossibility(e)}
-        >
+        <section className="possibilities-section">
           <div className="numbers">
-            <Numbers possibleScores={possibilities.numbers} />
+            <Numbers
+              possibleScores={possibilities.numbers}
+              handleSelectPossibility={handleSelectPossibility}
+            />
           </div>
           <div className="combinations">
-            <Combinations possibleScores={possibilities.combinations} />
+            <Combinations
+              possibleScores={possibilities.combinations}
+              handleSelectPossibility={handleSelectPossibility}
+            />
           </div>
         </section>
         <section className="dices-section">
