@@ -1,0 +1,329 @@
+html {
+  /* Now 1rem = 10px */
+  /* (62.5% = 10/16 bc by default font-size=16px and we want font-size=10px) */
+  font-size: 62.5%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  background-color: rgb(53, 128, 0);
+  color: #fff;
+  margin: 4rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.btn--top,
+.btn--top:link,
+.btn--top:visited {
+  display: inline-block;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* padding: 1.2rem 2rem; */
+  font-size: 4rem;
+  /* font-weight: 600; */
+  /* text-align: center; */
+  border-radius: 50%;
+
+  /* transition: all 0.3s; */
+  background-color: rgb(53, 128, 0);
+  /* color: #f4fce3; */
+}
+
+.btn--top .header-icon {
+  color: #f4fce3;
+}
+
+.btn--top:hover .header-icon,
+.btn--top:active .hdeaer-icon {
+  color: #bad08a;
+}
+
+/* .btn--return {
+}
+
+.btn--instruction {
+} */
+
+.total-scores {
+  width: 32rem;
+  display: flex;
+  gap: 2.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow-x: scroll; */
+  white-space: nowrap;
+}
+
+.total-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.player-num {
+  font-size: 1.8rem;
+}
+
+.player-score {
+  font-size: 3.2rem;
+}
+
+.leader {
+  border: 6px solid rgb(216, 197, 30);
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+/* MAIN SECTION */
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Title */
+.player-title {
+  text-align: center;
+  font-size: 4.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Possibilities */
+.possibilities-section {
+  padding: 0 12.8rem;
+  display: flex;
+  gap: 9.2rem;
+}
+
+.numbers,
+.combinations {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.number,
+.combination {
+  display: flex;
+  gap: 2rem;
+}
+
+.icon,
+.score,
+.bonus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  height: 6rem;
+}
+
+.score {
+  cursor: pointer;
+}
+
+.dice-icon {
+  font-size: 6.8rem;
+  color: #fff;
+}
+
+.house-icon {
+  font-size: 3.2rem;
+}
+
+.bg-white {
+  background-color: #fff;
+  color: rgb(53, 128, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.6rem;
+  border-radius: 10px;
+}
+
+.times {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.text {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.yahtzee {
+  font-size: 1.2rem;
+  font-weight: 750;
+}
+
+.score,
+.bonus {
+  background-color: #ccc;
+  border-radius: 10px;
+  color: rgb(53, 128, 0);
+  font-size: 3.6rem;
+  text-align: center;
+  font-weight: 900;
+}
+
+.bonus-value {
+  font-size: 2.2rem;
+}
+
+.selected-possibility {
+  border: 8px solid #333;
+}
+
+.previous-score {
+  background-color: #333;
+}
+
+/* Dices */
+.dices-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  height: 6rem;
+}
+
+.dice-img {
+  border-radius: 16px;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.3);
+  width: 6rem;
+  height: 6rem;
+}
+
+.block-dice {
+  border: 8px solid #333;
+}
+
+/* Buttons */
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  padding: 1.2rem 2rem;
+  width: 16rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+
+  transition: all 0.3s;
+  background-color: #999;
+  color: #f4fce3;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #f4fce3;
+  color: #999;
+}
+.buttons-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.8rem;
+}
+
+.btn--off,
+.btn--off:link,
+.btn--off:visited {
+  background-color: #ccc;
+}
+
+.btn--off:hover,
+.btn--off:active {
+  background-color: #ccc;
+  color: #f4fce3;
+}
+
+/* START MENU */
+.num-players-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  border-radius: 8px;
+}
+
+.num-players-form input {
+  padding: 1.2rem 2rem;
+  font-size: 3.6rem;
+  color: #66a80f;
+
+  border: none;
+  border-radius: 8px;
+}
+.num-players-form input::placeholder {
+  color: #999;
+}
+
+.num-players-form input:focus {
+  outline: none;
+}
+
+.btn--num-players,
+.btn--num-players:link,
+.btn--num-players:visited {
+  display: inline-block;
+
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+
+  padding: 1.2rem 2rem;
+  font-size: 3.6rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+
+  transition: all 0.3s;
+  background-color: #66a80f;
+  color: #f4fce3;
+}
+
+.btn--num-players:hover,
+.btn--num-players:active {
+  background-color: #f4fce3;
+  color: #66a80f;
+}
