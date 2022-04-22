@@ -8,6 +8,7 @@ import CurrentPlayer from "./components/currentPlayer";
 import StartMenu from "./components/startMenu";
 import PauseMenu from "./components/pauseMenu";
 import Rules from "./components/rules";
+import EndGame from "./components/endGame.jsx";
 
 import * as modele from "./components/modele";
 import "./App.css";
@@ -126,6 +127,7 @@ function App() {
       <StartMenu />
       {/* <PauseMenu /> */}
       {/* <Rules /> */}
+      {/* <EndGame /> */}
     </div>
   );
 }
