@@ -17,7 +17,7 @@ body {
   line-height: 1;
   background-color: rgb(53, 128, 0);
   color: #fff;
-  margin: 4rem auto;
+  padding-top: 8rem;
   display: flex;
   justify-content: center;
 }
@@ -277,42 +277,35 @@ main {
   color: #f4fce3;
 }
 
-/* START MENU */
-.num-players-form {
+/* MENUS */
+.background-menu {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.2rem;
-  border-radius: 8px;
-}
+  padding-bottom: 20rem;
 
-.num-players-form input {
-  padding: 1.2rem 2rem;
-  font-size: 3.6rem;
-  color: #66a80f;
-
-  border: none;
-  border-radius: 8px;
-}
-.num-players-form input::placeholder {
-  color: #999;
-}
-
-.num-players-form input:focus {
-  outline: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100vw;
+  background-color: hsla(79, 81%, 94%, 0.671);
 }
 
 .btn--num-players,
 .btn--num-players:link,
-.btn--num-players:visited {
+.btn--num-players:visited,
+.btn--pause,
+.btn--pause:link,
+.btn--pause:visited {
   display: inline-block;
 
   border: none;
   text-decoration: none;
   cursor: pointer;
 
-  padding: 1.2rem 2rem;
-  font-size: 3.6rem;
+  padding: 1.8rem 3.2rem;
+  font-size: 4.8rem;
   font-weight: 600;
   text-align: center;
   border-radius: 8px;
@@ -323,7 +316,122 @@ main {
 }
 
 .btn--num-players:hover,
-.btn--num-players:active {
+.btn--num-players:active,
+.btn--pause:hover,
+.btn--pause:active {
   background-color: #f4fce3;
   color: #66a80f;
+}
+
+/* START MENU */
+
+.start-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12rem;
+}
+
+.game-title {
+  font-size: 12rem;
+  color: #333;
+}
+
+.num-players-title {
+  font-size: 4.8rem;
+  color: #333;
+  padding-bottom: 4.8rem;
+}
+
+.yams-icon {
+  font-size: 16rem;
+  color: #333;
+}
+
+.num-players-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.8rem;
+}
+
+/* PAUSE MENU */
+.pause-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12rem;
+}
+
+.pause-title {
+  font-size: 6.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.pause-buttons {
+  display: flex;
+  gap: 4.8rem;
+}
+
+.btn--pause,
+.btn--pause:link,
+.btn--pause:visited {
+  width: 28rem;
+}
+
+/* SCORE MENU */
+.winner-title {
+  font-size: 12rem;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.all-scores {
+  display: flex;
+  gap: 6rem;
+}
+.one-score {
+  background-color: #66a80f;
+  padding: 3.2rem 4rem;
+  border-radius: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.player--num {
+  font-size: 4.8rem;
+}
+
+.player--score {
+  font-size: 7.2rem;
+}
+
+/* RULES */
+
+.rules-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6.4rem;
+}
+
+.rules-title {
+  font-size: 6.4rem;
+  text-transform: uppercase;
+  color: #333;
+  font-weight: 700;
+}
+
+.rules {
+  color: #333;
+  font-size: 3.2rem;
+  padding: 0 12.8rem;
 }

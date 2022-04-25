@@ -85,50 +85,52 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <header>
-        <Header scores={scores} />
-      </header>
-      <main>
-        <section className="title-section">
-          <CurrentPlayer currentPlayer={currentPlayer} />
-        </section>
-        <section className="possibilities-section">
-          <div className="numbers">
-            <Numbers
-              possibleScores={possibilities.numbers}
-              handleSelectPossibility={handleSelectPossibility}
-              gameBoard={gameBoard}
+    <>
+      <div className="container">
+        <header>
+          <Header scores={scores} />
+        </header>
+        <main>
+          <section className="title-section">
+            <CurrentPlayer currentPlayer={currentPlayer} />
+          </section>
+          <section className="possibilities-section">
+            <div className="numbers">
+              <Numbers
+                possibleScores={possibilities.numbers}
+                handleSelectPossibility={handleSelectPossibility}
+                gameBoard={gameBoard}
+              />
+            </div>
+            <div className="combinations">
+              <Combinations
+                possibleScores={possibilities.combinations}
+                handleSelectPossibility={handleSelectPossibility}
+                gameBoard={gameBoard}
+              />
+            </div>
+          </section>
+          <section className="dices-section">
+            <Dice
+              diceValues={diceValues}
+              handleBlockDice={handleBlockDice}
+              blockDices={blockDices}
             />
-          </div>
-          <div className="combinations">
-            <Combinations
-              possibleScores={possibilities.combinations}
-              handleSelectPossibility={handleSelectPossibility}
-              gameBoard={gameBoard}
+          </section>
+          <section className="buttons-section">
+            <Buttons
+              rollsCount={rollsCount}
+              handleRollDices={handleRollDices}
+              handlePlay={handlePlay}
             />
-          </div>
-        </section>
-        <section className="dices-section">
-          <Dice
-            diceValues={diceValues}
-            handleBlockDice={handleBlockDice}
-            blockDices={blockDices}
-          />
-        </section>
-        <section className="buttons-section">
-          <Buttons
-            rollsCount={rollsCount}
-            handleRollDices={handleRollDices}
-            handlePlay={handlePlay}
-          />
-        </section>
-      </main>
-      <StartMenu />
+          </section>
+        </main>
+      </div>
+      {/* <StartMenu /> */}
       {/* <PauseMenu /> */}
       {/* <Rules /> */}
       {/* <EndGame /> */}
-    </div>
+    </>
   );
 }
 
