@@ -1,0 +1,21 @@
+.frame {
+  background-color: #130f40;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  background: rgb(9, 211, 172);
+  width: 50px;
+  height: 41px;
+  width: 300px;
+  font-size: 18px;
+}
+
+.bigTitle {
+  color: #FFFFFF;
+}
