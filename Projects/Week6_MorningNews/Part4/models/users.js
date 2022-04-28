@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
     required: [true, "zzz Please provide a password zzz"],
     minlength: [8, "zzz Your password should have at least 8 characters zzz"],
   },
+  token: {
+    type: String,
+    required: true,
+  },
 });
 
 var userModel = mongoose.model("users", userSchema);
