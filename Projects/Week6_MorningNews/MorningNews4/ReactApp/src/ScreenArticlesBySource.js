@@ -38,7 +38,7 @@ function ScreenArticlesBySource(props) {
 
   const handleLike = function (article) {
     if (!props.myArticles.find((e) => e.title === article.title)) {
-      props.addToWoshList({
+      props.addToWishList({
         urlToImage: article.urlToImage,
         title: article.title,
         description: article.description,
@@ -109,10 +109,24 @@ function ScreenArticlesBySource(props) {
   );
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    addToWishList: function (article) {
+      dispatch({ type: "addArticle", article });
+    },
+    removeFromWishList: function (title) {
+      dispatch({ type: "removeArticle", title });
+    },
+  };
+}
+
 function mapStateToProps(state) {
   return { myArticles: state.myArticles, myToken: state.myToken };
 }
 
 // export default ScreenArticlesBySource;
 
-export default connect(mapStateToProps, null)(ScreenArticlesBySource);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ScreenArticlesBySource);
