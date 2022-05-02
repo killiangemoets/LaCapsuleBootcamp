@@ -4,7 +4,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-// We have to import the connection.js file to connect to the data base.
 require("./models/connection");
 
 var indexRouter = require("./routes/index");
