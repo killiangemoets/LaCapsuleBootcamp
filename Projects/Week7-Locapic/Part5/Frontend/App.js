@@ -15,6 +15,7 @@ import { LogBox } from "react-native";
 LogBox.ignoreAllLogs();
 
 const store = createStore(combineReducers({ pseudo, poi }));
+//
 
 const Stack = createStackNavigator();
 
