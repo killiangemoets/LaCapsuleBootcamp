@@ -4,7 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MapScreen from "./screens/MapScreen";
 import ChatScreen from "./screens/ChatScreen";
-
+sna;
 const Tab = createBottomTabNavigator();
 
 function Main() {
