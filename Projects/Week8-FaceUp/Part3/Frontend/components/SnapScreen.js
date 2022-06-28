@@ -44,6 +44,8 @@ function SnapScreen(props) {
       // console.log(photo.height);
       // console.log(photo.exif);
 
+      console.log(photo.uri);
+
       const data = new FormData();
       data.append("avatar", {
         uri: photo.uri,
