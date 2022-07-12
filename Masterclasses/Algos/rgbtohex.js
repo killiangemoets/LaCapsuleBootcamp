@@ -1,3 +1,4 @@
+// Function to convert a color from rbg to hex format
 const hexMe = (r, b, g) => {
   let result = "#";
   const hex = [
