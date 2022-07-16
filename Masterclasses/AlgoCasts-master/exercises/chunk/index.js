@@ -8,20 +8,25 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
+// function chunk(array, size) {
+//   let newArray = [];
+
+//   let i = 0;
+//   while (i < array.length) {
+//     let subarray = [];
+//     for (let j = 0; j < size; j++) {
+//       if (array[i]) subarray.push(array[i]);
+//       i++;
+//     }
+//     newArray.push(subarray);
+//   }
+//   return newArray;
+// }
+
 function chunk(array, size) {
   let newArray = [];
-  //   for (let i = 0; i < array.length; i + size) {
-  let i = 0;
-  while (i < array.length) {
-    // let subarray = [];
-    // for (let j = 0; j < size; j++) {
-    //   if (array[i]) subarray.push(array[i]);
-    //   i++;
-    // }
-    // newArray.push(subarray);
-
+  for (let i = 0; i < array.length; i = i + size) {
     newArray.push(array.slice(i, i + size));
-    i += size;
   }
   return newArray;
 }
@@ -31,13 +36,15 @@ function chunk(array, size) {
 
 //   for (let element of array) {
 //     const last = chunked[chunked.length - 1];
-//     console.log(last);
+//     console.log(`IN: Element: ${element}, Chunked: ${chunked}, Last: ${last}`);
 
 //     if (!last || last.length === size) {
 //       chunked.push([element]);
 //     } else {
 //       last.push(element);
 //     }
+
+//     console.log(`OUT: Element: ${element}, Chunked: ${chunked}, Last: ${last}`);
 //   }
 
 //   return chunked;
