@@ -11,6 +11,29 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+import { LinkedList as List } from "./linkedlist.js";
+
+function fromLast(list, n) {
+  let slow = list.head,
+    fast = list.head;
+
+  for (let i = 0; i < n; i++) {
+    fast = fast.next;
+  }
+
+  while (fast.next) {
+    fast = fast.next;
+    slow = slow.next;
+  }
+
+  return slow;
+}
+
+const list = new List();
+list.insertLast("a");
+list.insertLast("b");
+list.insertLast("c");
+list.insertLast("d");
+console.log(fromLast(list, 2).data); // 'b'
 
 module.exports = fromLast;

@@ -175,4 +175,4 @@ class LinkedList {
   }
 }
 
-module.exports = { Node, LinkedList };
+export { Node, LinkedList };
