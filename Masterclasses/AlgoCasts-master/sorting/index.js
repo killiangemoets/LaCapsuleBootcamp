@@ -14,9 +14,9 @@ function bubbleSort(arr) {
       }
     }
   }
-
   return arr;
 }
+
 function bubbleSort2(arr) {
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr.length - i - 1; j++) {
@@ -46,13 +46,54 @@ function selectionSort(arr) {
   return arr;
 }
 
-function mergeSort(arr) {}
+function mergeSort2(arr) {
+  const newArray = [];
+  arr.forEach((el) => {
+    newArray.push([el]);
+  });
+
+  while (newArray[1]) {
+    const mergeArray = merge(newArray[0], newArray[1]);
+    newArray.shift();
+    newArray.shift();
+    newArray.unshift(mergeArray);
+  }
+
+  return newArray[0];
+}
+
+function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+
+  const center = Math.floor(arr.length / 2);
+  const left = arr.slice(0, center);
+  const right = arr.slice(center);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
 
 // Left and Right are sorted arrays
 // The goal of the merge function is to merge this 2 sorted arrays
-function merge(left, right) {}
+function merge(left, right) {
+  const array = [];
+  let next;
+  while (left.length || right.length) {
+    if ((left.length && !right.length) || left[0] < right[0]) {
+      next = left.shift();
+    } else {
+      next = right.shift();
+    }
+    array.push(next);
+  }
+
+  return array;
+}
 
 console.log(bubbleSort([100, -40, 500, -124, 0, 21, 7]));
 console.log(selectionSort([100, -40, 500, -124, 0, 21, 7]));
+console.log(mergeSort([100, -40, 500, -124, 0, 21, 7]));
+console.log(merge([-30, 22, 10], [0, 12, 97, 40]));
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
