@@ -15,6 +15,49 @@
 //       '#####' row = 3; l = 5; midpoint-2 midpoint+2
 //                  row;  l = 2¨row-1; midpoint + 1 - row  midpoint + row - 1
 
+// 1) Iterative
+function pyramidIterative(n) {
+  // const lengthBase = 2 * n - 1;
+  // for (let row = 1; row <= n; row++) {
+  //   const lengthSquares = 2 * row - 1;
+  //   const lenghtWhiteSpaces = (lengthBase - lengthSquares) / 2;
+  //   console.log(
+  //     " ".repeat(lenghtWhiteSpaces) +
+  //       "#".repeat(lengthSquares) +
+  //       " ".repeat(lenghtWhiteSpaces)
+  //   );
+  // }
+  let midpoint = n;
+  for (let row = 1; row <= n; row++) {
+    let str = "";
+    for (let column = 1; column <= 2 * n - 1; column++) {
+      if (column < midpoint - (row - 1) || column > midpoint + (row - 1))
+        str += " ";
+      else str += "#";
+    }
+    console.log(str);
+  }
+}
+
+// pyramidIterative(40);
+
+//2) Recursive
+function pyramidRecursive(n, row = 1, stair = "") {
+  if (row > n) return;
+  else if (stair.length === n * 2 - 1) {
+    console.log(stair);
+    pyramidRecursive(n, row + 1, "");
+  } else {
+    if (stair.length + 1 < n - (row - 1) || stair.length + 1 > n + (row - 1))
+      stair += " ";
+    else stair += "#";
+    pyramidRecursive(n, row, stair);
+  }
+}
+// pyramidRecursive(5);
+
+//////////////////////////////////////////////
+
 // 1) Iterative Solution
 function pyramid2(n) {
   const l = 2 * n - 1;
@@ -49,7 +92,6 @@ function pyramid4(n, i = 1) {
   const lspace = (l - lsquare) / 2;
   console.log(" ".repeat(lspace) + "#".repeat(lsquare) + " ".repeat(lspace));
 
-  //   console.log(i, n);
   pyramid(n, i + 1);
 }
 
@@ -74,7 +116,7 @@ function pyramid(n, row = 1, stair = "") {
   pyramid(n, row, stair);
 }
 
-pyramid(10);
+// pyramid(10);
 // pyramid2(10);
 // pyramid3(10);
 // pyramid4(10);

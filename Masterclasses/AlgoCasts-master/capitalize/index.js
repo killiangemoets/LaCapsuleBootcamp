@@ -7,11 +7,20 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
+// function capitalizeString(str) {
+//   str = str[0].toUpperCase() + str.slice(1);
+//   for (let i = 1; i < str.length; i++) {
+//     if (str[i - 1] === " ")
+//       str = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
+//   }
+//   return str;
+// }
+
 function capitalize2(str) {
   return str
     .split("")
     .map((char, i) => {
-      if (str.split("")[i - 1] === " " || i === 0) return char.toUpperCase();
+      if (i === 0 || str.split("")[i - 1] === " ") return char.toUpperCase();
       else return char;
     })
     .join("");

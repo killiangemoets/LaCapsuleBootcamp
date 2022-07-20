@@ -51,6 +51,7 @@ function mergeSort2(arr) {
   arr.forEach((el) => {
     newArray.push([el]);
   });
+  console.log(newArray);
 
   while (newArray[1]) {
     const mergeArray = merge(newArray[0], newArray[1]);
@@ -91,9 +92,10 @@ function merge(left, right) {
   return array;
 }
 
-console.log(bubbleSort([100, -40, 500, -124, 0, 21, 7]));
-console.log(selectionSort([100, -40, 500, -124, 0, 21, 7]));
-console.log(mergeSort([100, -40, 500, -124, 0, 21, 7]));
-console.log(merge([-30, 22, 10], [0, 12, 97, 40]));
+// console.log(bubbleSort([100, -40, 500, -124, 0, 21, 7]));
+// console.log(selectionSort([100, -40, 500, -124, 0, 21, 7]));
+// console.log(mergeSort([100, -40, 500, -124, 0, 21, 7]));
+console.log(mergeSort2([100, -40, 500, -124, 0, 21, 7]));
+// console.log(merge([-30, 22, 10], [0, 12, 97, 40]));
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };

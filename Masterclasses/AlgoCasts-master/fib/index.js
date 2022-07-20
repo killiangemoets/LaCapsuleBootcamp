@@ -65,14 +65,14 @@ function memoize(fn) {
 // We take our slow function, we pass it to memorize and that's going to return a new function assigned to fib
 fib = memoize(fib);
 
-console.log(fib(0));
-console.log(fib(1));
-console.log(fib(2));
-console.log(fib(3));
-console.log(fib(4));
-console.log(fib(7));
-console.log(fib(8));
-console.log(fib(9));
+// console.log(fib(0));
+// console.log(fib(1));
+// console.log(fib(2));
+// console.log(fib(3));
+// console.log(fib(4));
+// console.log(fib(7));
+// console.log(fib(8));
+// console.log(fib(9));
 
 module.exports = fib;
 

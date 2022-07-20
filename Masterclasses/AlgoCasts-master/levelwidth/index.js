@@ -19,7 +19,8 @@ function levelWidth2(root) {
     el.node.children.forEach((child) => {
       array.push({ node: child, level: el.level + 1 });
     });
-    levels[el.level] = levels[el.level] ? levels[el.level] + 1 : 1;
+    // levels[el.level] = levels[el.level] ? levels[el.level] + 1 : 1;
+    levels[el.level] = levels[el.level] + 1 || 1;
   }
 
   return levels;
@@ -68,6 +69,6 @@ root.children[0].add(-2);
 root.children[0].add(1);
 root.children[2].add(-3);
 console.log(root);
-console.log(levelWidth(root));
+console.log(levelWidth2(root));
 
 module.exports = levelWidth;

@@ -9,37 +9,43 @@
 //   reverseInt(-90) === -9
 //   reverseInt(520) === 25
 
-// function reverseInt(n) {
-//   // 0 is an exception
-//   if (n === 0) return 0;
+function reverseInteger(int) {
+  return (
+    parseInt(int.toString().split("").reverse().join("")) * (int >= 0 ? 1 : -1)
+  );
+}
 
-//   // 1) Split number into an array
-//   let value = n.toString().split("");
+function reverseInt2(n) {
+  // 0 is an exception
+  if (n === 0) return 0;
 
-//   // 2) Keep the negative sign if number is negative
-//   let sign = "";
-//   if (value[0] === "-") {
-//     sign = "-";
-//     value = value.slice(1);
-//   }
+  // 1) Split number into an array
+  let value = n.toString().split("");
 
-//   // 3) Revese the number
-//   value = value.reverse().join("");
+  // 2) Keep the negative sign if number is negative
+  let sign = "";
+  if (value[0] === "-") {
+    sign = "-";
+    value = value.slice(1);
+  }
 
-//   // 4) Remove the potential zeros at the beginning
-//   while (value[0] === "0") {
-//     value = value.slice(1);
-//   }
+  // 3) Revese the number
+  value = value.reverse().join("");
 
-//   // 5) Form the new number
-//   //   const newNumber = parseInt((sign += value));
-//   const newNumber = +(sign += value);
+  // 4) Remove the potential zeros at the beginning
+  while (value[0] === "0") {
+    value = value.slice(1);
+  }
 
-//   // 4) & 5) combined
-//   //   const newNumber = +(sign += parseInt(value));
+  // 5) Form the new number
+  // const newNumber = parseInt(sign + value);
+  const newNumber = +(sign + value);
 
-//   return newNumber;
-// }
+  // 4) & 5) combined
+  //   const newNumber = +(sign + parseInt(value));
+
+  return newNumber;
+}
 
 function reverseInt(n) {
   const reversed = n.toString().split("").reverse().join("");

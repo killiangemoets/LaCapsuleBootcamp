@@ -23,6 +23,24 @@
 //   return newArray;
 // }
 
+// function chunkArray(array, size) {
+//   let newArray = [];
+//   let count = 0;
+//   let sub = [];
+//   for (let el of array) {
+//     sub.push(el);
+//     count++;
+//     if (count === size) {
+//       newArray.push(sub);
+//       sub = [];
+//       count = 0;
+//     }
+//   }
+//   if (sub.length > 0) newArray.push(sub);
+
+//   return newArray;
+// }
+
 function chunk(array, size) {
   let newArray = [];
   for (let i = 0; i < array.length; i = i + size) {

@@ -15,6 +15,7 @@
 import { LinkedList } from "./linkedlist.js";
 
 function midpoint2(list) {
+  console.log(list);
   let slow = list.head,
     fast = list.head;
 
@@ -27,6 +28,7 @@ function midpoint2(list) {
 }
 
 function midpoint(list) {
+  // console.log(list);
   let slow = list.getFirst(),
     fast = list.getFirst();
 

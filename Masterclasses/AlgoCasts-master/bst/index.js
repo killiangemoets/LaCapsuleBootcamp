@@ -24,7 +24,9 @@ class Node {
     let insert = false;
 
     while (!insert) {
-      if (data <= comparator.data) {
+      if (data === comparator.data) {
+        insert = true;
+      } else if (data < comparator.data) {
         if (comparator.left) comparator = comparator.left;
         else {
           comparator.left = new Node(data);
@@ -42,7 +44,8 @@ class Node {
 
   // Recursive Solution
   insert(data) {
-    if (data <= this.data) {
+    if (data === this.data) return;
+    if (data < this.data) {
       if (this.left) this.left.insert(data);
       else {
         this.left = new Node(data);
@@ -74,6 +77,18 @@ class Node {
   }
 
   // Recursive Solution
+  contains3(data) {
+    if (data === this.data) {
+      return this;
+    } else if (data < comparator.data) {
+      if (comparator.left) return this.left.contains3(data);
+      return null;
+    } else {
+      if (comparator.right) return this.right.contains3(data);
+      return null;
+    }
+  }
+
   contains(data) {
     if (data === this.data) {
       return this;

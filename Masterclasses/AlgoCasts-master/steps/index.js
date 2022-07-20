@@ -17,13 +17,21 @@
 //       '### '
 //       '####'
 
+function printingSteps(n) {
+  for (let i = 1; i <= n; i++) {
+    console.log("#".repeat(i) + " ".repeat(n - i));
+  }
+}
+printingSteps(2);
+printingSteps(4);
+printingSteps(6);
+printingSteps(8);
+
 // Iterative solutions
 function steps3(n) {
   for (let i = 1; i <= n; i++) {
     let str = "";
     for (let j = 1; j <= n; j++) {
-      //   if (j <= i) str += "#";
-      //   else str += " ";
       str += j <= i ? "#" : " ";
     }
     console.log(str);
@@ -82,7 +90,7 @@ function steps5(n, row = 0, stair = "") {
   steps5(n, row, stair);
 }
 
-steps(8);
+// steps(8);
 // steps2(8);
 // steps3(8);
 // steps4(8);

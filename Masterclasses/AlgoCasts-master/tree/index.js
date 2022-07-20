@@ -52,7 +52,6 @@ class Tree {
 
   traverseDFrecursive(fn, node = this.root) {
     fn(node);
-
     node.children.forEach((child) => {
       this.traverseDF(fn, child);
     });

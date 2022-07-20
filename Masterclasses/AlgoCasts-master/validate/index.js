@@ -5,34 +5,21 @@
 // every node's right hand child is greater than
 // the parent
 
-function validate2(node, min = -Infinity, max = Infinity) {
+function validate(node, min = -Infinity, max = Infinity) {
   if (node.data > min && node.data < max) {
-    //Check left
-    const maxLeft = node.data;
-    const minLeft = min;
-    const nodeLeft = node.left;
-
-    // Check right
-    const maxRight = max;
-    const minRight = node.data;
-    const nodeRight = node.right;
-
-    if (nodeLeft && nodeRight)
-      return (
-        validate(nodeLeft, minLeft, maxLeft) &&
-        validate(nodeRight, minRight, maxRight)
-      );
-    else if (!nodeLeft && nodeRight)
-      return validate(nodeRight, minRight, maxRight);
-    else if (nodeLeft && !nodeRight)
-      return validate(nodeLeft, minLeft, maxLeft);
-    else if (!nodeLeft && !nodeRight) return true;
-  } else {
-    return false;
-  }
+    if (node.left) {
+      return validate(node.left, min, node.data);
+    }
+    if (node.right) {
+      return validate(node.right, node.data, max);
+    }
+    if (!node.left && !node.right) {
+      return true;
+    }
+  } else return false;
 }
 
-function validate(node, min = null, max = null) {
+function validate3(node, min = null, max = null) {
   if (max && node.data > max) {
     return false;
   }
@@ -53,3 +40,30 @@ function validate(node, min = null, max = null) {
 }
 
 module.exports = validate;
+
+// function validate2(node, min = -Infinity, max = Infinity) {
+//   if (node.data > min && node.data < max) {
+//     //Check left
+//     const maxLeft = node.data;
+//     const minLeft = min;
+//     const nodeLeft = node.left;
+
+//     // Check right
+//     const maxRight = max;
+//     const minRight = node.data;
+//     const nodeRight = node.right;
+
+//     if (nodeLeft && nodeRight)
+//       return (
+//         validate(nodeLeft, minLeft, maxLeft) &&
+//         validate(nodeRight, minRight, maxRight)
+//       );
+//     else if (!nodeLeft && nodeRight)
+//       return validate(nodeRight, minRight, maxRight);
+//     else if (nodeLeft && !nodeRight)
+//       return validate(nodeLeft, minLeft, maxLeft);
+//     else if (!nodeLeft && !nodeRight) return true;
+//   } else {
+//     return false;
+//   }
+// }
