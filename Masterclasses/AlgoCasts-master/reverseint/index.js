@@ -15,6 +15,7 @@ function reverseInteger(int) {
   );
 }
 
+// My solution
 function reverseInt2(n) {
   // 0 is an exception
   if (n === 0) return 0;
