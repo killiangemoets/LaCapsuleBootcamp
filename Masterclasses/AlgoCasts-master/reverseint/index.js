@@ -9,11 +9,11 @@
 //   reverseInt(-90) === -9
 //   reverseInt(520) === 25
 
-function reverseInteger(int) {
-  return (
-    parseInt(int.toString().split("").reverse().join("")) * (int >= 0 ? 1 : -1)
-  );
-}
+// function reverseInteger(int) {
+//   return (
+//     parseInt(int.toString().split("").reverse().join("")) * (int >= 0 ? 1 : -1)
+//   );
+// }
 
 // My solution
 function reverseInt2(n) {
