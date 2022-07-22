@@ -48,6 +48,7 @@ function reverseInt2(n) {
   return newNumber;
 }
 
+// Shorter solution
 function reverseInt(n) {
   const reversed = n.toString().split("").reverse().join("");
   return parseInt(reversed) * Math.sign(n);
